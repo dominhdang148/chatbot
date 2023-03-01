@@ -1329,3 +1329,71 @@ nlu:
     - công thức tính điểm xét học bạ
     - điểm học bạ có tính điểm lớp 10 không
     - yêu cầu tính điểm học bạ
+- intent: thuan_loi_ho_tro
+  examples: |
+    - thuận lợi và hỗ trợ
+    - hỗ trợ
+    - thuận lợi
+- intent: hoc_song_nganh
+  examples: |
+    - học song ngành
+    - thuận lợi và hỗ trợ của học song ngành
+    - song ngành
+    - học 2 ngành liên tiếp
+    - học 2 ngành trong cùng một khoảng thời gian
+- intent: hoc_tich_luy_hoc_phan_thac_si
+  examples: |
+    - học tích lũy học phần thạc sĩ
+    - học thạc sĩ
+    - thạc sĩ
+    - tích lũy thạc sĩ
+    - tích lũy học thạc sĩ
+- intent: muc_tieu_song_nganh
+  examples: |
+    - mục tiêu
+    - mục tiêu của học song ngành
+    - mục tiêu cần đạt được của học song ngành
+    - học song ngành cần đạt mục tiêu gì
+    - mục tiêu cần đạt nhất của học song ngành
+- intent: doi_tuong_song_nganh
+  examples: |
+    - đối tượng
+    - ai có thể học song ngành
+    - đối tượng có thể học song ngành
+    - tôi có thể học song ngành không
+    - học song nganh cần những gì
+- intent: uu_diem_song_nganh
+  examples: |
+    - ưu điểm
+    - học song ngành mình đạt được những gì
+    - ưu điểm của học song ngành
+    - học song ngành có gì tốt
+    - học song ngành giúp gì cho tương lai
+- intent: dieu_kien_song_nganh
+  examples: |
+    - điều kiện
+    - tôi có thể học song ngành hay không
+    - học song ngành cần gì
+- intent: danh_sach_nganh_song_nganh
+  examples: |
+    - danh sách ngành
+    - danh sách các ngành có thể học song ngành
+    - những môn có thể học song ngành
+- intents: danh_muc_nganh_thac_si
+  examples: |
+    - danh muc nganh
+    - danh sách các ngành có thể học lên thạc sĩ
+    - các ngành có thể học lên thạc sĩ là gì
+- intent: gioi_thieu_thac_si
+  examples: |
+    - giới thiệu
+    - tổng quan về học thạc sĩ
+    - liên quan tới thạc sĩ
+    - ngành thạc sĩ của trường
+- intent: uu_diem_thac_si
+  examples: |
+    - ưu điểm
+    - ưu diểm của ngành thạc sĩ
+    - học thạc sĩ thì có lợi gì
+    - tại sao phải học thạc sĩ
+
