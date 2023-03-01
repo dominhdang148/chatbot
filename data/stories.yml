@@ -182,3 +182,83 @@ stories:
   - action: action_Cac_nganh_dao_tao
   - intent: Dieu_kien_xet_tuyen_nganh_su_pham
   - action: utter_Dieu_kien_xet_tuyen_nganh_su_pham
+- story: thuan_loi_ho_tro_song_nganh_muc_tieu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_song_nganh
+  - action: utter_hoc_song_nganh
+  - intent: muc_tieu_song_nganh
+  - action: utter_muc_tieu_hoc_song_nganh
+- story: thuan_loi_ho_tro_song_nganh_doi_tuong
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_song_nganh
+  - action: utter_hoc_song_nganh
+  - intent: doi_tuong_song_nganh
+  - action: utter_doi_tuong_hoc_song_nganh
+- story: thuan_loi_ho_tro_song_nganh_uu_diem
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_song_nganh
+  - action: utter_hoc_song_nganh
+  - intent: uu_diem_song_nganh
+  - action: utter_uu_diem_hoc_song_nganh
+- story: thuan_loi_ho_tro_song_nganh_dieu_kien
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_song_nganh
+  - action: utter_hoc_song_nganh
+  - intent: dieu_kien_song_nganh
+  - action: utter_dieu_kien_hoc_song_nganh
+- story: thuan_loi_ho_tro_song_nganh_danh_sach_nganh
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_song_nganh
+  - action: utter_hoc_song_nganh
+  - intent: danh_sach_nganh_song_nganh
+  - action: utter_danh_sach_nganh_hoc_song_nganh
+- story: thuan_loi_ho_tro_thac_si_danh_muc_nganh
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_tich_luy_hoc_phan_thac_si
+  - action: utter_hoc_thac_si
+  - intent: danh_muc_nganh_thac_si
+  - action: utter_danh_muc_nganh_thac_si
+- story: thuan_loi_ho_tro_thac_si_gioi_thieu
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_tich_luy_hoc_phan_thac_si
+  - action: utter_hoc_thac_si
+  - intent: gioi_thieu_thac_si
+  - action: utter_gioi_thieu_nganh_thac_si
+- story: thuan_loi_ho_tro_thac_si_uu_diem
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+  - intent: hoc_tich_luy_hoc_phan_thac_si
+  - action: utter_hoc_thac_si
+  - intent: uu_diem_thac_si
+  - action: utter_uu_diem_nganh_thac_si
