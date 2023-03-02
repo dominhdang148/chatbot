@@ -128,6 +128,76 @@ rules:
   - action: action_Cac_nganh_dao_tao
 
 - rule: Cac_khoa_cua_truong
-  steps:
-  - intent: Cac_khoa_cua_truong
-  - action: action_Cac_khoa_cua_truong
+steps:
+  - intent: Cac_nganh_dao_tao
+  - action: action_Cac_nganh_dao_tao
+
+- rule: khoa_toan_tin	
+steps:
+  - intent: khoa_toan_tin
+  - action: utter_khoa_toan_tin
+
+- rule: khoa_su_pham	
+steps:
+  - intent: khoa_su_pham	
+  - action: utter_khoa_su_pham	
+
+- rule: khoa_VatLyKyThuatHatNhan	
+steps:
+  - intent: khoa_VatLyKyThuatHatNhan	
+  - action: utter_khoa_VatLyKyThuatHatNhan
+
+- rule: khoa_ToanHoc	
+steps:
+  - intent: khoa_ToanHoc	
+  - action: utter_khoa_ToanHoc	
+
+- rule: khoa_CNTT	
+steps:
+  - intent: khoa_CNTT	
+  - action: utter_khoa_CNTT
+
+- rule: khoa_HoahocVaMoitruong	
+steps:
+  - intent: khoa_HoahocVaMoitruong	
+  - action: utter_khoa_HoahocVaMoitruong	
+
+- rule: khoa_SinhHoc	
+steps:
+  - intent: khoa_SinhHoc
+  - action: utter_khoa_SinhHoc	
+
+- rule: khoa_KinhteQuantrikinhdoanh	
+steps:
+  - intent: khoa_KinhteQuantrikinhdoanh	
+  - action: utter_khoa_KinhteQuantrikinhdoanh	
+
+- rule: khoa_NongLam	
+steps:
+  - intent: khoa_NongLam	
+  - action: utter_khoa_NongLam	
+
+- rule: khoa_LuatHoc	
+steps:
+  - intent:  khoa_LuatHoc	
+  - action: utter_khoa_LuatHoc	
+
+- rule: khoa_DuLich	
+steps:
+  - intent: khoa_DuLich	
+  - action: utter_khoa_DuLich		
+
+- rule: khoa_QuocTeHoc	
+steps:
+  - intent:  khoa_QuocTeHoc	
+  - action: utter_khoa_QuocTeHoc	
+
+- rule: khoa_NguVanvaLichSu	
+steps:
+  - intent: khoa_NguVanvaLichSu	
+  - action: utter_khoa_NguVanvaLichSu
+
+- rule: khoa_NgoaiNgu	
+steps:
+  - intent: khoa_NgoaiNgu	
+  - action: utter_khoa_NgoaiNgu	
