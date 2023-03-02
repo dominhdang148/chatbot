@@ -191,7 +191,7 @@ responses:
        - title: Học tích lũy thạc sĩ
          payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_hoc_song_nganh:
-  - text: Những thông tin về học song ngành.
+  - text: Những thông tin về học song ngành của trường Đại học Đà Lạt.
     quick_replies:
         - title: Mục tiêu
           payload: /muc_tieu_song_nganh
@@ -201,7 +201,7 @@ responses:
           payload: /uu_diem_song_nganh
         - title: Điều kiện
           payload: /dieu_kien_song_nganh
-        - title: Danh sách ngành 
+        - title: Danh sách ngành
           payload: /danh_sach_nganh_song_nganh
   utter_hoc_thac_si:
     quick_replies:
@@ -237,18 +237,18 @@ responses:
           payload: /hoc_song_nganh
   utter_danh_sach_nganh_hoc_song_nganh:
   - link: http://thuvien.dlu.edu.vn/vi/tin-tuc-c1d95/dao-tao-song-nganh-3030
-  - text: Danh sách những ngành có thể học song ngành.
+  - text: Danh sách đào tạo song ngành của trường Đại học Đà Lạt
     quick_replies:
         - title: Học song ngành
           payload: /hoc_song_nganh
   utter_danh_muc_nganh_thac_si:
   - link: https://dlu.edu.vn/cac-nganh-dao-tao-trinh-do-thac-si/
-  - text: Danh sách ngành học lên thạc sĩ.
+  - text: Danh mục ngành được đăng ký học trước các học phần trình độ thạc sĩ.
     quick_replies:
         - title: Học tích lũy thạc sĩ
           payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_gioi_thieu_nganh_thac_si:
-  - text: giới thiệu tổng quan về học thạc sĩ.
+  - text: Giới thiệu tổng quan.
   - link: https://dlu.edu.vn/wp-content/uploads/2022/08/Quy-che-dao-tao-thac-si-Truong-Dai-hoc-Da-Lat.pdf
     quick_replies:
         - title: Học tích lũy thạc sĩ
