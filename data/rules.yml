@@ -2,7 +2,7 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Say 'goodbye' anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
@@ -131,3 +131,58 @@ rules:
   steps:
   - intent: Cac_khoa_cua_truong
   - action: action_Cac_khoa_cua_truong
+
+- rule: thuan_loi_ho_tro
+  steps:
+  - intent: thuan_loi_ho_tro
+  - action: utter_thuan_loi_va_ho_tro
+
+- rule: hoc_song_nganh
+  steps:
+  - intent: hoc_song_nganh
+  - action: utter_hoc_song_nganh
+
+- rule: muc_tieu_hoc_song_nganh
+  steps:
+  - intent: muc_tieu_song_nganh
+  - action: utter_muc_tieu_hoc_song_nganh
+
+- rule: doi_tuong_hoc_song_nganh
+  steps:
+  - intent: doi_tuong_song_nganh
+  - action: utter_doi_tuong_hoc_song_nganh
+
+- rule: uu_diem_cua_hoc_song_nganh
+  steps:
+  - intent: uu_diem_song_nganh
+  - action: utter_uu_diem_hoc_song_nganh
+
+- rule: dieu_kien_của _hoc_song_nganh
+  steps:
+  - intent: dieu_kien_song_nganh
+  - action: utter_dieu_kien_hoc_song_nganh
+
+- rule: danh_sach_nganh_hoc_song_nganh
+  steps:
+  - intent: danh_sach_nganh_song_nganh
+  - action: utter_danh_sach_nganh_hoc_song_nganh
+
+- rule: hoc_tich_luy_hoc_phan_thac_si
+  steps:
+  - intent: hoc_tich_luy_hoc_phan_thac_si
+  - action: utter_hoc_thac_si
+
+- rule: danh_muc_nganh_hoc_tich_luy_thac_si
+  steps:
+  - intent: danh_muc_nganh_thac_si
+  - action: utter_danh_muc_nganh_thac_si
+
+- rule: gioi_thieu_hoc_tich_luy_thac_si
+  steps:
+  - intent: gioi_thieu_thac_si
+  - action: utter_gioi_thieu_nganh_thac_si
+
+- rule: uu_diem_hoc_tich_luy_thac_si
+  steps:
+  - intent: uu_diem_thac_si
+  - action: utter_uu_diem_nganh_thac_si
