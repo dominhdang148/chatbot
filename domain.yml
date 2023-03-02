@@ -258,6 +258,36 @@ responses:
     quick_replies:
         - title: Học tích lũy thạc sĩ
           payload: /hoc_tich_luy_hoc_phan_thac_si
+  utter_khoa_toan_tin:
+  - text: Đây là thông tin khoa Toán tin Email khoatoantin@dlu.edu.vn ; Website  http://ktt.dlu.edu.vn ; Fanpage https://www.facebook.com/groups/mcs.dlu/ 
+  utter_khoa_su_pham:	
+  - text: Đây là thông tin khoa sư phạm Email khoasupham@dlu.edu.vn ; Website http://sp.dlu.edu.vn ; Fanpage https://www.facebook.com/KhoaSuphamDaihocDalat/ ; sđt 0263 3826 911
+  utter_khoa_VatLyKyThuatHatNhan:
+  - text: Đây là thông tin khoa Vật Lý Kỹ Thuật Hạt Nhân Email khoavatly@dlu.edu.vn ; Website http://vl.dlu.edu.vn ; Fanpage https://www.facebook.com/khoavatlydalat/ ; sđt 0263 3822 246
+  utter_khoa_CNTT:	
+  - text: Đây là thông tin khoa Công Nghệ Thông Tin Email it@dlu.edu.vn ; Website http://cntt.dlu.edu.vn ; Fanpage https://www.facebook.com/InformationTechnologyDLU/ ; sđt 0263 3552 540
+  utter_khoa_HoahocVaMoitruong:	
+  - text: Đây là thông tin khoa Hóa Học và Môi Trường Email khoahhmt@dlu.edu.vn ; Website http://khhmt.dlu.edu.vn ; Fanpage https://www.facebook.com/khoahoahocvamoitruongdlu/ ; sđt 0263 3834 046 
+  utter_khoa_SinhHoc:	
+  - text: Đây là thông tin khoa Sinh Học Email  khoasinhhoc@dlu.edu.vn ; Website http://ksh.dlu.edu.vn ; Fanpage https://www.facebook.com/khoasinhoc/?locale=vi_VN ; sđt 0263 3834 050
+  utter_khoa_KinhteQuantrikinhdoanh:	
+  - text: Đây là thông tin khoa Kinh Te Quan Tri Kinh Doanh Email khoakinhte_qtkd@dlu.edu.vn ; Website http://kktqt.dlu.edu.vn ; Fanpage https://www.facebook.com/ktqtkd.dlu/?locale=vi_VN ; sđt 0263 3831 105
+  utter_khoa_NongLam:	
+  - text: Đây là thông tin khoa Nông Lâm Email khoanonglam@dlu.edu.vn ; Website http://knl.dlu.edu.vn ; Fanpage https://www.facebook.com/Nonglam.DLU/?locale=vi_VN ; sđt 0263 3834 051
+  utter_khoa_LuatHoc:	
+  - text: Đây là thông tin khoa Luât Học  Email khoaluathoc@dlu.edu.vn ; Website http://klh.dlu.edu.vn ; Fanpage https://www.facebook.com/tuoitrekhoaluatdlu/; sđt 0263 3554 457
+  utter_khoa_DuLich:
+  - text: Đây là thông tin khoa Du Lịch  Email khoaquantridulich@dlu.edu.vn ; Website http://kqtdl.dlu.edu.vn ; Fanpage https://www.facebook.com/khoaqtdulichdalat/ ; sđt 0263 3552 165
+  utter_khoa_QuocTeHoc:	
+  - text: Đây là thông tin khoa Quốc Tế Học Email khoaquoctehoc@dlu.edu.vn ; Website http://kqth.dlu.edu.vn ; Fanpage https://www.facebook.com/Qth.dlu/?locale=vi_VN
+  utter_khoa_NguVanvaLichSu:	
+  - text: Đây là thông tin khoa Ngữ Văn và Lich Sử Email khoanguvan_vanhoahoc@dlu.edu.vn ; Website http://nvvh.dlu.edu.vn ; Fanpage https://www.facebook.com/nvdhdl/?locale=vi_VN ; sđt 0263 3826 913
+  utter_khoa_XahoihocvaCongtacxahoi:	
+  - text: Đây là thông tin khoa Xã Hội và Công Tác Xã Hội Email khoaxhh_ctxh@dlu.edu.vn ; Website http://kctxh.dlu.edu.vn ; Fanpage https://www.facebook.com/XHHCTXHDLU/ ; sđt 0263 3834 469
+  utter_khoa_NgoaiNgu:	
+  - text: Đây là thông tin khoa Ngoại Ngữ Email khoangoaingu@dlu.edu.vn ; Website http://nn.dlu.edu.vn ; Fanpage https://www.facebook.com/groups/231966513525512/
+  utter_ma_truong:
+  - text: Mã của trường Đại học Đà Lạt là TDL bạn nhé
 actions:
 - utter_greet
 - utter_happy
@@ -304,6 +334,20 @@ actions:
 - action_To_hop_xet_tuyen
 - action_Cac_nganh_dao_tao
 - action_Cac_khoa_cua_truong
-
+- utter_fallback
+- utter_khoa_toan_tin	
+- utter_khoa_su_pham	
+- utter_khoa_VatLyKyThuatHatNhan	
+- utter_khoa_CNTT	
+- utter_khoa_HoahocVaMoitruong	
+- utter_khoa_SinhHoc	
+- utter_khoa_KinhteQuantrikinhdoanh	
+- utter_khoa_NongLam	
+- utter_khoa_LuatHoc	
+- utter_khoa_DuLich	
+- utter_khoa_QuocTeHoc	
+- utter_khoa_NguVanvaLichSu	
+- utter_khoa_XahoihocvaCongtacxahoi	
+- utter_khoa_NgoaiNgu	
 forms: {}
 e2e_actions: []

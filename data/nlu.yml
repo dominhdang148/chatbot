@@ -1397,3 +1397,64 @@ nlu:
     - học thạc sĩ thì có lợi gì
     - tại sao phải học thạc sĩ
 
+- intent: khoa_toan_tin	
+  examples: |
+    - thông tin của khoa toán tin
+- intent: khoa_su_pham	
+  examples: |
+    - thông tin khoa sư phạm 
+- intent: khoa_VatLyKyThuatHatNhan	
+  examples: |
+    - thông tin khoa vật lý ky thuật hat nhân
+- intent: khoa_ToanHoc	
+  examples: |
+    - thông tin khoa toan hoc
+- intent: khoa_CNTT	
+  examples: |
+    - thông tin khoa công nghệ thông tin 
+- intent: khoa_HoahocVaMoitruong	
+  examples: |
+    - thông tin khoa hóa học và môi trường 
+- intent: khoa_SinhHoc	
+  examples: |
+    - thông tin khoa sinh học
+- intent: khoa_KinhteQuantrikinhdoanh	
+  examples: |
+    - thông tin khoa kinh tế quản trị kinh doanh
+- intent: khoa_NongLam	
+  examples: |
+    - thông tin khoa nông lâm 
+- intent: khoa_LuatHoc	
+  examples: |
+    - thông tin khoa luật học 
+- intent: khoa_DuLich	
+  examples: |
+    - thông tin khoa du lịch 
+- intent: khoa_QuocTeHoc	
+  examples: |
+    - thông tin khoa quốc tế học 
+- intent: khoa_NguVanvaLichSu	
+  examples: |
+    - thông tin khoa ngữ văn và lịch sử 
+- intent: khoa_NgoaiNgu	
+  examples: |
+    - thông tin khoa ngoai ngữ 
+- intent: ma_truong
+  examples: |
+    - Cho minh hỏi mã trường của trường mình là gì vậy ạ?
+    - Mã trường
+    - Mã số của trường là gì?
+    - Cho em xin thông tin về mã trường với ạ
+    - Mã trường Đại học Đà Lạt là gì?
+    - Em cần biết mã trường của mình ạ
+    - Bạn ơi, bạn cho mình mã số của trường với ạ
+    - Mình phải điền gì vào ô "Mã trường"
+- intent: phuong_thuc_xet_tuyen
+  examples: |
+    - Phương thức xét tuyển của trường Đại học Đà Lạt là?
+    - Phương thức xét tuyển
+    - Đại học Đà Lạt xét tuyển với những phương thức nào?
+    - Em có thể xét tuyển bằng hình thức nào ạ?
+    - Đại học Đà Lạt có bao nhiêu hình thức xét tuyển
+    - Cho em hỏi trường Đại Học Đà lạt nhận xét tốt nghiệp với những hình thức nào ạ?
+    
