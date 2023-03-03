@@ -1457,4 +1457,82 @@ nlu:
     - Em có thể xét tuyển bằng hình thức nào ạ?
     - Đại học Đà Lạt có bao nhiêu hình thức xét tuyển
     - Cho em hỏi trường Đại Học Đà lạt nhận xét tốt nghiệp với những hình thức nào ạ?
-    
+    - Em có thể được xét tuyển bằng hình thức nào ạ?
+
+- intent: hoc_ba
+  examples: |
+    - Cho em xin thông tin về xét học bạ ạ
+    - Trường đại học Đà Lạt có xét học bạ không ạ?
+    - Em có thể xét tuyển bằng học bạ không ạ?
+    - Em muốn được xét tuyển bằng học bạ ạ
+
+- intent: thptqg
+  examples: |
+    - Cho em xin thông tin về xét điểm THPTQG với ạ
+    - Trường đại học Đà Lạt có xét điểm thi THPTQG không ạ?
+    - Em có thể xét tuyển bằng điểm thi tốt nghiệp THPTQG không ạ?
+    - Em muốn được xét tuyển bằng điểm THPTQG ạ
+- intent: dgnl
+  examples: |
+    - Cho em xin thông tin về xét điểm thi đánh giá năng lực ạ
+    - Trường đại học Đà Lạt có xét điểm thi Đánh giá năng lực không ạ?
+    - Em có thể xét tuyển bằng kết quả kì thi đánh giá năng lực không ạ?
+    - Em muốn được xét tuyển bằng điẻm thi đánh giá năng lực ạ
+- intent: xet_thang
+  examples: |
+    - Cho em xin thông tin về xét tuyển thẳng với ạ
+    - Trường đại học Đà Lạt có xét tuyển thẳng không ạ?
+    - Em có thể xét tuyển thẳng không ạ?
+    - Em muốn được xét tuyển thẳng vào trường Đại học Đà Lạt ạ
+- intent: ho_so_hoc_ba
+  examples: |
+    - Cho em hỏi về hồ sơ đăng kí xét tuyển học bạ với ạ
+
+- intent: tinh_diem_hoc_ba
+    - Điểm học bạ được tính như thế nào ạ?
+
+- intent: cach_nop_hoc_ba
+  examples: |
+    - Em có thể nộp hồ sơ đăng kí xét tuyển học bạ bằng cách nào ạ?
+
+- intent: thoi_han_hoc_ba
+  examples: |
+    - Khi nào là hạn chót nộp hồ sơ đăng kí xét tuyển học bạ ạ?
+
+- intent: ho_so_thpt
+  examples: |
+    - Hồ sơ đăng kí xét tuyển bằng điểm thi THPTQG gồm những gì ạ?
+- intent: cach_thuc_thpt
+  examples: |
+    - Em muốn biết cách thức xét điểm thi tốt nghiệp trung học phổ thông quốc gia ạ!
+
+- intent: thoi_han_thpt
+  examples: |
+    - Khi nào là hạn chót nộp hồ sơ đăng kí xét tuyển bằng điểm thi THPTQG ạ?
+
+- intent: ho_so_dgnl
+  examples: |
+    - Hồ sơ đăng kí xét tuyển bằng điểm thi Đánh giá năng lực gồm những gì ạ?
+- intent: cach_thuc_dgnl
+  examples: |
+    - Em muốn biết cách thức xét điểm thi đánh giá năng lực ạ!
+
+- intent: thoi_han_dgnl
+  examples: |
+    - Khi nào là hạn chót nộp hồ sơ đăng kí xét tuyển bằng điểm thi Đánh giá năng lực ạ?
+
+- intent: qd_truong
+  examples: |
+    - Em có đủ tiêu chí để xét tốt tuyển thẳng theo quy định của trường không ạ?
+
+- intent: qd_bo
+  examples: |
+    - Em có đủ tiêu chí để xét tốt tuyển thẳng theo quy định của bộ không ạ?
+
+- intent: truc_tiep
+  examples: |
+    - Em muốn nộp hồ sơ đăng kí học bạ trực tiếp thì em phải nộp ở đâu ạ?
+  
+- intent: buu_dien
+  example: |
+    - Em đang ở xa, không thể lên trường trực tiếp được, vậy Em có thể gửi hồ sơ thông qua bưu điện được không ạ?

@@ -266,3 +266,98 @@ rules:
   steps:
   - intent: ma_truong
   - action: utter_ma_truong
+
+- rule: xet tuyen
+  steps:
+  - intent: phuong_thuc_xet_tuyen
+  - action: utter_phuong_thuc_xet_tuyen
+
+- rule: xet hoc Ba
+  steps:
+  - intent: hoc_ba
+  - action: utter_xet_hocba
+
+- rule: xet THPTQG
+  steps:
+  - intent: thptqg
+  - action: utter_xet_thpt
+
+- rule: xet dgnl
+  steps:
+  - intent: dgnl
+  - action: utter_xet_dgnl
+
+- rule: xet thang
+  steps:
+  - intent: xet_thang
+  - action: utter_xet_thang
+
+- rule: ho so hoc ba
+  steps:
+  - intent: ho_so_hoc_ba
+  - action: utter_ho_so_hoc_ba
+
+- rule: cach nop hoc Ba
+  steps:
+  - intent: cach_nop_hoc_ba
+  - action: utter_cach_nop_hoc_ba
+
+- rule: tinh diem hoc Ba
+  steps:
+  - intent: tinh_diem_hoc_ba
+  - action: utter_tinh_diem_hoc_ba
+
+- rule: gui truc tiep
+  steps:
+  - intent: truc_tiep
+  - action: utter_truc_tiep
+
+- rule: gui buu dien
+  steps:  
+  - intent: buu_dien
+  - action: utter_buu_dien
+
+- rule: thoi han hoc ba
+  steps:
+  - intent: thoi_han_hoc_ba
+  - action: utter_thoi_han_hoc_ba
+
+- rule: ho so thpt
+  steps: 
+  - intent: ho_so_thpt
+  - action: utter_ho_so_thpt
+
+- rule: cach thuc thpt
+  steps: 
+  - intent: cach_thuc_thpt
+  - action: utter_cach_thuc_thpt
+
+- rule: thoi han thpt
+  steps: 
+  - intent: thoi_han_thpt
+  - action: utter_thoi_han_thpt
+
+- rule: ho so dgnl
+  steps: 
+  - intent: ho_so_dgnl
+  - action: utter_ho_so_dgnl
+
+- rule: cach thuc dgnl
+  steps: 
+  - intent: cach_thuc_dgnl
+  - action: utter_cach_thuc_dgnl
+
+- rule: thoi han dgnl
+  steps: 
+  - intent: thoi_han_dgnl
+  - action: utter_thoi_han_dgnl
+
+- rule: qd truong
+  steps: 
+  - intent: qd_truong
+  - action: utter_qd_truong
+
+- rule: qd bo
+  steps: 
+  - intent: qd_bo
+  - action: utter_qd_bo
