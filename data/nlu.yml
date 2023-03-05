@@ -1345,10 +1345,6 @@ nlu:
   examples: |
     - thông tin khoa vật lý ky thuật hat nhân
     - khoa vật lý kỹ thuật hạt nhân
-- intent: khoa_ToanHoc
-  examples: |
-    - thông tin khoa toan hoc
-    - khoa toán tin
 - intent: khoa_CNTT
   examples: |
     - thông tin khoa công nghệ thông tin
