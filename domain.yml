@@ -316,7 +316,7 @@ responses:
        - title: Học song ngành
          payload: /hoc_song_nganh
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -327,7 +327,7 @@ responses:
        - title: Học song ngành
          payload: /hoc_song_nganh
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -338,7 +338,7 @@ responses:
        - title: Học song ngành
          payload: /hoc_song_nganh
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -349,7 +349,7 @@ responses:
        - title: Học song ngành
          payload: /hoc_song_nganh
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -360,7 +360,7 @@ responses:
        - title: Học song ngành
          payload: /hoc_song_nganh
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -371,7 +371,7 @@ responses:
        - title: Học tích lũy thạc sĩ
          payload: /hoc_tich_luy_hoc_phan_thac_si
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -382,7 +382,7 @@ responses:
        - title: Học tích lũy thạc sĩ
          payload: /hoc_tich_luy_hoc_phan_thac_si
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
@@ -393,7 +393,7 @@ responses:
        - title: Học tích lũy thạc sĩ
          payload: /hoc_tich_luy_hoc_phan_thac_si
        - title: Danh sách các khoa
-         payload: /danh_sach_cac_khoa
+         payload: /danh_sach_khoa
        - title: Học phí học bổng
          payload: /hoc_phi_va_hoc_bong
        - title: Ký túc xá
