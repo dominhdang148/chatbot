@@ -1329,45 +1329,63 @@ nlu:
     - công thức tính điểm xét học bạ
     - điểm học bạ có tính điểm lớp 10 không
     - yêu cầu tính điểm học bạ
-- intent: khoa_toan_tin	
+- intent: danh_sach_khoa
+  examples: |
+      - danh sách các khoa
+      - các khoa
+- intent: khoa_toan_tin
   examples: |
     - thông tin của khoa toán tin
-- intent: khoa_su_pham	
+    - khoa toán
+- intent: khoa_su_pham
   examples: |
-    - thông tin khoa sư phạm 
-- intent: khoa_VatLyKyThuatHatNhan	
+    - thông tin khoa sư phạm
+    - khoa sư phạm
+- intent: khoa_VatLyKyThuatHatNhan
   examples: |
     - thông tin khoa vật lý ky thuật hat nhân
-- intent: khoa_ToanHoc	
+    - khoa vật lý kỹ thuật hạt nhân
+- intent: khoa_ToanHoc
   examples: |
     - thông tin khoa toan hoc
-- intent: khoa_CNTT	
+    - khoa toán tin
+- intent: khoa_CNTT
   examples: |
-    - thông tin khoa công nghệ thông tin 
-- intent: khoa_HoahocVaMoitruong	
+    - thông tin khoa công nghệ thông tin
+    - khoa công nghệ thông tin
+- intent: khoa_HoahocVaMoitruong
   examples: |
-    - thông tin khoa hóa học và môi trường 
-- intent: khoa_SinhHoc	
+    - thông tin khoa hóa học và môi trường
+    - khoa hóa học và môi trường
+- intent: khoa_SinhHoc
   examples: |
     - thông tin khoa sinh học
-- intent: khoa_KinhteQuantrikinhdoanh	
+    - khoa sinh học
+- intent: khoa_KinhteQuantrikinhdoanh
   examples: |
     - thông tin khoa kinh tế quản trị kinh doanh
-- intent: khoa_NongLam	
+    - khoa kinh tế quản trị kinh doanh
+- intent: khoa_NongLam
   examples: |
-    - thông tin khoa nông lâm 
-- intent: khoa_LuatHoc	
+    - thông tin khoa nông lâm
+    - khoa nông lâm
+- intent: khoa_LuatHoc
   examples: |
-    - thông tin khoa luật học 
-- intent: khoa_DuLich	
+    - thông tin khoa luật học
+    - khoa ngữ văn và lịch sử
+- intent: khoa_DuLich
   examples: |
-    - thông tin khoa du lịch 
-- intent: khoa_QuocTeHoc	
+    - thông tin khoa du lịch
+    - khoa ngữ văn và lịch sử
+- intent: khoa_QuocTeHoc
   examples: |
-    - thông tin khoa quốc tế học 
-- intent: khoa_NguVanvaLichSu	
+    - thông tin khoa quốc tế học
+    - khoa ngữ văn và lịch sử
+- intent: khoa_NguVanvaLichSu
   examples: |
-    - thông tin khoa ngữ văn và lịch sử 
-- intent: khoa_NgoaiNgu	
+    - thông tin khoa ngữ văn và lịch sử
+    - khoa ngữ văn và lịch sử
+- intent: khoa_NgoaiNgu
   examples: |
-    - thông tin khoa ngoai ngữ 
+    - thông tin khoa ngoai ngữ
+    - khoa ngoại ngữ

@@ -132,6 +132,10 @@ steps:
   - intent: Cac_nganh_dao_tao
   - action: action_Cac_nganh_dao_tao
 
+- rule: danh_sach_khoa_dlu
+  - intent: danh_sach_khoa
+  - action: utter_danh_sach_khoa
+
 - rule: khoa_toan_tin	
 steps:
   - intent: khoa_toan_tin
