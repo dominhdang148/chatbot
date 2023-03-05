@@ -298,14 +298,14 @@ responses:
     - title: Danh sách ngành
       payload: /danh_sach_nganh_song_nganh
   utter_hoc_thac_si:
-    - text: Bạn vui lòng chọn.
-      button:
-      - title: Danh mục ngành
-        payload: /danh_muc_nganh_thac_si
-      - title: Giới thiệu
-        payload: /gioi_thieu_nganh_thac_si
-      - title: Ưu điểm
-        payload: /uu_diem_thac_si
+  - text: Bạn vui lòng chọn.
+    button:
+    - title: Danh mục ngành
+      payload: /danh_muc_nganh_thac_si
+    - title: Giới thiệu
+      payload: /gioi_thieu_nganh_thac_si
+    - title: Ưu điểm
+      payload: /uu_diem_thac_si
   utter_muc_tieu_hoc_song_nganh:
   - text: |-
       Sinh viên có cơ hội tiếp cận kiến thức của ngành thứ 2 mà mình yêu thích và phù hợp với năng lực bản thân;
