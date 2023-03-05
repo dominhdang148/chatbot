@@ -30,7 +30,7 @@ import openpyxl
 
 class ActionChiTieuTuyenSinh(Action):
     
-    wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+    wb = openpyxl.load_workbook("Test-v2.xlsx")
     
     def name(self) -> Text:
         return "action_Chi_tieu_tuyen_sinh"
@@ -81,7 +81,7 @@ class ActionMaNganh(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             entity_name = sheet.cell(row=i, column=3).value
@@ -112,7 +112,7 @@ class ActionDiemXetTuyen(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             entity = sheet.cell(row=i, column=6).value
@@ -147,7 +147,7 @@ class ActionToHopXetTuyen(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             entity = sheet.cell(row=i, column=6).value
@@ -180,7 +180,7 @@ class ActionCongViecRaTruong(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             entity = sheet.cell(row=i, column=6).value
@@ -210,7 +210,7 @@ class ActionThongTinNganh(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             entity = sheet.cell(row=i, column=6).value
@@ -240,7 +240,7 @@ class ActionTiLeViecLam(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             # entity_name = sheet.cell(row=i, columm=6)
@@ -252,7 +252,6 @@ class ActionTiLeViecLam(Action):
         if len(entitiesDict) > 0:
             if entity in resultDict and resultDict[entity] != "Chưa có":
                 entity = entitiesDict[0]["entity"]
-                entity_name = 
                 resultText = "Tỉ lệ việc làm ngành {} là {}".format(
                     entity, resultDict[entity]
                 )
@@ -274,7 +273,7 @@ class ActionCacNganhDaoTao(Action):
 
         resultDict = set()
         resultText = "Danh sách các ngành trường tuyển sinh năm 2021 gồm: \n"
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             name = sheet.cell(row=i, column=20).value
@@ -299,7 +298,7 @@ class ActionCacKhoa(Action):
 
         resultDict = set()
         resultText = "Danh sách các khoa của trường gồm: \n"
-        wb = openpyxl.load_workbook("D:\Projects\RASA\Test-v2.xlsx")
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
             name = sheet.cell(row=i, column=5).value
