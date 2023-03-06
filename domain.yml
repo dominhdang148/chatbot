@@ -462,71 +462,213 @@ responses:
       quick_replies:
         - title: Học tích lũy thạc sĩ
           payload: /hoc_tich_luy_hoc_phan_thac_si
-  utter_khoa_toan_tin:
-    - text: Đây là thông tin khoa Toán tin Email khoatoantin@dlu.edu.vn ;
-        Website  http://ktt.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/groups/mcs.dlu/
-  utter_khoa_su_pham:
-    - text: Đây là thông tin khoa sư phạm Email khoasupham@dlu.edu.vn ; Website
-        http://sp.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/KhoaSuphamDaihocDalat/ ; sđt 0263 3826 911
+      sđt 0263 3826 911
+    quick_replies:
+       - title: Điểm chuẩn
+         payload: <POSTBACK_PAGELOAD>
+       - title: Hồ sơ xét tuyển
+         payload: <POSTBACK_PAGELOAD>
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_VatLyKyThuatHatNhan:
-    - text:
-        Đây là thông tin khoa Vật Lý Kỹ Thuật Hạt Nhân Email khoavatly@dlu.edu.vn
-        ; Website http://vl.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/khoavatlydalat/ ; sđt 0263 3822 246
+  - text: |-
+      Đây là thông tin khoa Vật Lý Kỹ Thuật Hạt Nhân Email khoavatly@dlu.edu.vn ;
+      Website http://vl.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/khoavatlydalat/ ; 
+      sđt 0263 3822 246
+    quick_replies:
+       - title: Điểm chuẩn
+         payload: <POSTBACK_PAGELOAD>
+       - title: Hồ sơ xét tuyển
+         payload: <POSTBACK_PAGELOAD>
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_CNTT:
-    - text:
-        Đây là thông tin khoa Công Nghệ Thông Tin Email it@dlu.edu.vn ; Website
-        http://cntt.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/InformationTechnologyDLU/ ; sđt 0263 3552 540
+  - text: |-
+      Đây là thông tin khoa Công Nghệ Thông Tin Email it@dlu.edu.vn ; 
+      Website http://cntt.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/InformationTechnologyDLU/ ; 
+      sđt 0263 3552 540
+    quick_replies:
+       - title: Điểm chuẩn
+         payload: <POSTBACK_PAGELOAD>
+       - title: Hồ sơ xét tuyển
+         payload: <POSTBACK_PAGELOAD>
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_HoahocVaMoitruong:
-    - text:
-        Đây là thông tin khoa Hóa Học và Môi Trường Email khoahhmt@dlu.edu.vn ;
-        Website http://khhmt.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/khoahoahocvamoitruongdlu/ ; sđt 0263 3834 046
+  - text: |-
+      Đây là thông tin khoa Hóa Học và Môi Trường 
+      Email khoahhmt@dlu.edu.vn ; Website http://khhmt.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/khoahoahocvamoitruongdlu/ ; 
+      sđt 0263 3834 046
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_SinhHoc:
-    - text:
-        Đây là thông tin khoa Sinh Học Email  khoasinhhoc@dlu.edu.vn ; Website
-        http://ksh.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/khoasinhoc/?locale=vi_VN ; sđt 0263 3834 050
+  - text: |-
+      Đây là thông tin khoa Sinh Học 
+      Email  khoasinhhoc@dlu.edu.vn ; 
+      Website http://ksh.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/khoasinhoc/?locale=vi_VN ; 
+      sđt 0263 3834 050
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_KinhteQuantrikinhdoanh:
-    - text: Đây là thông tin khoa Kinh Te Quan Tri Kinh Doanh Email
-        khoakinhte_qtkd@dlu.edu.vn ; Website http://kktqt.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/ktqtkd.dlu/?locale=vi_VN ; sđt 0263 3831 105
+  - text: |-
+      Đây là thông tin khoa Kinh Te Quan Tri Kinh Doanh 
+      Email khoakinhte_qtkd@dlu.edu.vn ; 
+      Website http://kktqt.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/ktqtkd.dlu/?locale=vi_VN ; 
+      sđt 0263 3831 105
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_NongLam:
-    - text:
-        Đây là thông tin khoa Nông Lâm Email khoanonglam@dlu.edu.vn ; Website
-        http://knl.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/Nonglam.DLU/?locale=vi_VN ; sđt 0263 3834 051
+  - text: |-
+      Đây là thông tin khoa Nông Lâm 
+      Email khoanonglam@dlu.edu.vn ; 
+      Website http://knl.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/Nonglam.DLU/?locale=vi_VN ; 
+      sđt 0263 3834 051
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_LuatHoc:
-    - text:
-        Đây là thông tin khoa Luât Học  Email khoaluathoc@dlu.edu.vn ; Website
-        http://klh.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/tuoitrekhoaluatdlu/; sđt 0263 3554 457
+  - text: |-
+      Đây là thông tin khoa Luât Học 
+      Email khoaluathoc@dlu.edu.vn ; Website http://klh.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/tuoitrekhoaluatdlu/; 
+      sđt 0263 3554 457
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_DuLich:
-    - text: Đây là thông tin khoa Du Lịch  Email khoaquantridulich@dlu.edu.vn ;
-        Website http://kqtdl.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/khoaqtdulichdalat/ ; sđt 0263 3552 165
+  - text: |-
+      Đây là thông tin khoa Du Lịch  
+      Email khoaquantridulich@dlu.edu.vn ; 
+      Website http://kqtdl.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/khoaqtdulichdalat/ ; 
+      sđt 0263 3552 165
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_QuocTeHoc:
-    - text:
-        Đây là thông tin khoa Quốc Tế Học Email khoaquoctehoc@dlu.edu.vn ; Website
-        http://kqth.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/Qth.dlu/?locale=vi_VN
+  - text: |-
+      Đây là thông tin khoa Quốc Tế Học 
+      Email khoaquoctehoc@dlu.edu.vn ; 
+      Website http://kqth.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/Qth.dlu/?locale=vi_VN
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_NguVanvaLichSu:
-    - text: Đây là thông tin khoa Ngữ Văn và Lich Sử Email
-        khoanguvan_vanhoahoc@dlu.edu.vn ; Website http://nvvh.dlu.edu.vn ;
-        Fanpage https://www.facebook.com/nvdhdl/?locale=vi_VN ; sđt 0263 3826
-        913
+  - text: |-
+      Đây là thông tin khoa Ngữ Văn và Lich Sử 
+      Email khoanguvan_vanhoahoc@dlu.edu.vn ; 
+      Website http://nvvh.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/nvdhdl/?locale=vi_VN ; 
+      sđt 0263 3826 913
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_XahoihocvaCongtacxahoi:
-    - text: Đây là thông tin khoa Xã Hội và Công Tác Xã Hội Email
-        khoaxhh_ctxh@dlu.edu.vn ; Website http://kctxh.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/XHHCTXHDLU/ ; sđt 0263 3834 469
+  - text: |-
+      Đây là thông tin khoa Xã Hội và Công Tác Xã Hội
+      Email khoaxhh_ctxh@dlu.edu.vn ; 
+      Website http://kctxh.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/XHHCTXHDLU/ ; 
+      sđt 0263 3834 469
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_khoa_NgoaiNgu:
-    - text:
-        Đây là thông tin khoa Ngoại Ngữ Email khoangoaingu@dlu.edu.vn ; Website
-        http://nn.dlu.edu.vn ; Fanpage
-        https://www.facebook.com/groups/231966513525512/
+  - text: |-
+      Đây là thông tin khoa Ngoại Ngữ Email khoangoaingu@dlu.edu.vn ; 
+      Website http://nn.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/groups/231966513525512/
+    quick_replies:
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
   utter_tuyen_sinh:
     - text: Bạn muốn mình hỗ trợ điều gì về Tuyển sinh 2023?
       quick_replies:
