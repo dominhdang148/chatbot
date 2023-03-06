@@ -28,20 +28,20 @@ import openpyxl
 #
 #         return []
 
+
 class ActionChiTieuTuyenSinh(Action):
-    
+
     wb = openpyxl.load_workbook("Test-v2.xlsx")
-    
+
     def name(self) -> Text:
         return "action_Chi_tieu_tuyen_sinh"
-    
-    def FindFaculty(self,entity):
+
+    def FindFaculty(self, entity):
         for row in self.ws.iter_rows("F"):
             for cell in row:
                 if cell.value == entity:
-                    return self.wb.cell(row=cell.row,column=3).value
-        
-    
+                    return self.wb.cell(row=cell.row, column=3).value
+
     def run(
         self,
         dispatcher: CollectingDispatcher,
@@ -50,7 +50,7 @@ class ActionChiTieuTuyenSinh(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
-        
+
         sheet = self.wb["Sheet1"]
         for i in range(3, 67):
             entity = sheet.cell(row=i, column=6).value
@@ -59,7 +59,7 @@ class ActionChiTieuTuyenSinh(Action):
         entitiesDict = tracker.latest_message["entities"]
         resultText = "Hiện tại tôi không tìm thấy thông tin liên quan tới ngành bạn quan tâm. Bạn vui lòng kiểm tra lại tên ngành hoặc đặt câu hỏi rõ ràng hơn giúp tôi."
         if len(entitiesDict) > 0 and entity in resultDict:
-            entity_name=self.FindFaculty(entity=entity)
+            entity_name = self.FindFaculty(entity=entity)
             entity = entitiesDict[0]["entity"]
             resultText = "Chỉ tiêu xét tuyển của ngành {} là: {}".format(
                 entity_name, resultDict[entity]
