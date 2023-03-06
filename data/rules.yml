@@ -351,3 +351,23 @@ rules:
   steps: 
   - intent: qd_bo
   - action: utter_qd_bo
+
+- rule: Tuyen sinh
+  steps:
+  - intent: tuyen_sinh
+  - action: utter_tuyen_sinh
+
+- rule: Nganh Tuyen Sinh
+  steps:
+  - intent: nganh_tuyen_sinh
+  - action: utter_nganh_tuyen_sinh
+
+- rule: Nganh Su Pham
+  steps:
+  - intent: nganh_su_pham
+  - action: action_nganh_su_pham
+
+- rule: Nganh tong hop
+  steps:
+  - intent: nganh_tong_hop
+  - action: action_nganh_tong_hop

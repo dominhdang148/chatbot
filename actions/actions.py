@@ -13,21 +13,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import openpyxl
 
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
 
 class ActionChiTieuTuyenSinh(Action):
 
@@ -35,12 +20,6 @@ class ActionChiTieuTuyenSinh(Action):
 
     def name(self) -> Text:
         return "action_Chi_tieu_tuyen_sinh"
-
-    def FindFaculty(self, entity):
-        for row in self.ws.iter_rows("F"):
-            for cell in row:
-                if cell.value == entity:
-                    return self.wb.cell(row=cell.row, column=3).value
 
     def run(
         self,
@@ -50,19 +29,22 @@ class ActionChiTieuTuyenSinh(Action):
     ) -> List[Dict[Text, Any]]:
 
         resultDict = {}
+        nameDict = {}
 
         sheet = self.wb["Sheet1"]
         for i in range(3, 67):
+            name = sheet.cell(row=i, column=20).value
             entity = sheet.cell(row=i, column=6).value
             number = sheet.cell(row=i, column=8).value
+            nameDict[entity] = name
             resultDict[entity] = number
+            nameDict[entity] = name
         entitiesDict = tracker.latest_message["entities"]
         resultText = "Hiện tại tôi không tìm thấy thông tin liên quan tới ngành bạn quan tâm. Bạn vui lòng kiểm tra lại tên ngành hoặc đặt câu hỏi rõ ràng hơn giúp tôi."
         if len(entitiesDict) > 0 and entity in resultDict:
-            entity_name = self.FindFaculty(entity=entity)
             entity = entitiesDict[0]["entity"]
             resultText = "Chỉ tiêu xét tuyển của ngành {} là: {}".format(
-                entity_name, resultDict[entity]
+                nameDict[entity], resultDict[entity]
             )
         dispatcher.utter_message(resultText)
 
@@ -80,20 +62,23 @@ class ActionMaNganh(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
+        nameDict = {}
         resultDict = {}
         wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
-            entity_name = sheet.cell(row=i, column=3).value
+            name = sheet.cell(row=i, column=20).value
             entity = sheet.cell(row=i, column=6).value
             number = sheet.cell(row=i, column=7).value
+            nameDict[entity] = name
             resultDict[entity] = number
+            nameDict[entity] = name
         entitiesDict = tracker.latest_message["entities"]
         resultText = "Hiện tại tôi không tìm thấy thông tin liên quan tới ngành bạn quan tâm. Bạn vui lòng kiểm tra lại tên ngành hoặc đặt câu hỏi rõ ràng hơn giúp tôi."
         if len(entitiesDict) > 0 and entity in resultDict:
             entity = entitiesDict[0]["entity"]
             resultText = "Mã ngành của ngành {} là: {}".format(
-                entity_name, resultDict[entity]
+                nameDict[entity], resultDict[entity]
             )
         dispatcher.utter_message(resultText)
 
@@ -239,13 +224,15 @@ class ActionTiLeViecLam(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
+        nameDict = {}
         resultDict = {}
         wb = openpyxl.load_workbook("Test-v2.xlsx")
         sheet = wb["Sheet1"]
         for i in range(3, 67):
-            # entity_name = sheet.cell(row=i, columm=6)
+            name = sheet.cell(row=i, column=20).value
             entity = sheet.cell(row=i, column=6).value
             info = sheet.cell(row=i, column=19).value
+            nameDict[entity] = name
             resultDict[entity] = str(info)
         entitiesDict = tracker.latest_message["entities"]
         resultText = "Hiện tại tôi không có thông tin về tỉ lệ việc làm của ngành bạn quan tâm vì ngành này chưa có sinh viên ra trường"
@@ -253,7 +240,7 @@ class ActionTiLeViecLam(Action):
             if entity in resultDict and resultDict[entity] != "Chưa có":
                 entity = entitiesDict[0]["entity"]
                 resultText = "Tỉ lệ việc làm ngành {} là {}".format(
-                    entity, resultDict[entity]
+                    nameDict[entity], resultDict[entity]
                 )
         dispatcher.utter_message(resultText)
 
@@ -303,6 +290,59 @@ class ActionCacKhoa(Action):
         for i in range(3, 67):
             name = sheet.cell(row=i, column=5).value
             resultDict.add(name)
+        for item in resultDict:
+            resultText += item + "\n"
+        dispatcher.utter_message(resultText)
+
+        return []
+
+
+class ActionNganhSuPham(Action):
+    def name(self) -> Text:
+        return "action_nganh_su_pham"
+
+    def run(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        quickReplies = []
+        resultDict = set()
+        resultText = "Danh sách các ngành sư phạm gồm: \n"
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
+        sheet = wb["Sheet1"]
+        for i in range(3, 67):
+            name = sheet.cell(row=i, column=5).value
+            if name == "KHOA SƯ PHẠM":
+                resultDict.add(sheet.cell(row=i, column=20))
+        for item in resultDict:
+            resultText += item + "\n"
+        dispatcher.utter_message(resultText)
+
+        return []
+
+
+class ActionNganhTongHop(Action):
+    def name(self) -> Text:
+        return "action_nganh_tong_hop"
+
+    def run(
+        self,
+        dispatcher: "CollectingDispatcher",
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        resultDict = set()
+        resultText = "Danh sách các ngành tổng hợp gồm: \n"
+        wb = openpyxl.load_workbook("Test-v2.xlsx")
+        sheet = wb["Sheet1"]
+        for i in range(3, 67):
+            name = sheet.cell(row=i, column=5).value
+            if name != "KHOA SƯ PHẠM":
+                resultDict.add(sheet.cell(row=i, column=20))
         for item in resultDict:
             resultText += item + "\n"
         dispatcher.utter_message(resultText)

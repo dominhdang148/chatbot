@@ -1550,4 +1550,41 @@ nlu:
 - intent: buu_dien
   examples: |
     - Em đang ở xa, không thể lên trường trực tiếp được, vậy Em có thể gửi hồ sơ thông qua bưu điện được không ạ?
-    - Có thể gửi hồ sơ qua bưu điện k?
+    - Có thể gửi hồ sơ qua bưu điện k?'
+
+- intent: tuyen_sinh
+  examples: |
+    - Cho mình hỏi vấn đề tuyển sinh của trường với ạ
+    - bạn cho mình hỏi trường có xét tuyển học bạ online không ạ
+    - trường có các phương thức tuyển sinh nào ạ
+    - trường có xét tuyển onl không ạ
+    - bot chi mình hỏi về việc tuyển sinh của trường
+    - ad cho hỏi về tuyển sinh với
+
+- intent: nganh_tuyen_sinh
+  examples: |
+    - Các ngành tuyển sinh của trường gồm những ngành nào ạ?
+    - Trường tuyển sinh những ngành nào ạ?
+
+- intent: nganh_ths
+  examples: |
+    - Các ngành tuyển sinh thạc sĩ của trường mình gồm những ngành nào ạ?
+    - Trường tuyển sinh thạc sĩ với những ngành nào ạ?  
+
+- intent: nganh_ts
+  examples: |
+    - Các ngành tuyển sinh tiến sĩ của trường mình gồm những ngành nào ạ?
+    - Trường tuyển sinh hệ tiến sĩ với những ngành nào ạ?  
+
+- intent: nganh_dh
+  examples: |
+    - Các ngành tuyển sinh trình độ đại học của trường mình gồm những ngành nào ạ?
+    - Trường tuyển sinh hệ đại học với những ngành nào ạ?
+
+- intent: nganh_su_pham
+  examples: |
+    - Các ngành sư phạm của trường mình gồm những ngành nào?
+    
+- intent: nganh_tong_hop
+  examples: | 
+    - Các ngành tổng hợp của trường mình gồm những ngành nào?
