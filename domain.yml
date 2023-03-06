@@ -462,6 +462,60 @@ responses:
       quick_replies:
         - title: Học tích lũy thạc sĩ
           payload: /hoc_tich_luy_hoc_phan_thac_si
+  utter_danh_sach_khoa:
+    - text: Danh sách các khoa
+      quick_replies:
+        - title: khoa toán tin
+          payload: /khoa_toan_tin
+        - title: khoa sư phạm
+          payload: /khoa_su_ham
+        - title: khoa vật lý kỹ thuật hạt nhân
+          payload: /khoa_VatLyKyThuatHatNhan
+        - title: khoa công ngệ thông tin
+          payload: /khoa_CNTT
+        - title: khoa hóa học và môi trường
+          payload: /khoa_HoahocVaMoitruong
+        - title: khoa sinh học
+          payload: /khoa_SinhHoc
+        - title: khoa kinh tế quản trị kinh doanh
+          payload: /khoa_KinhteQuantrikinhdoanh
+        - title: khoa nông lâm
+          payload: /khoa_NongLam
+        - title: khoa luật học
+          payload: /khoa_LuatHoc
+        - title: khoa du lịch
+          payload: /khoa_DuLich
+        - title: khoa quốc tế học
+          payload: /khoa_QuocTeHoc
+        - title: khoa ngữ văn và lịch sử
+          payload: /khoa_NguVanvaLichSu
+        - title: khoa xã hội học và công tac xã hội
+          payload: /khoa_XahoihocvaCongtacxahoi
+        - title: khoa ngoại ngữ
+          payload: /khoa_NgoaiNgu
+  utter_khoa_toan_tin:
+  - text: |-
+      Đây là thông tin khoa Toán tin Email khoatoantin@dlu.edu.vn ;
+      Website  http://ktt.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/groups/mcs.dlu/
+    quick_replies:
+       - title: Điểm chuẩn
+         payload: <POSTBACK_PAGELOAD>
+       - title: Hồ sơ xét tuyển
+         payload: <POSTBACK_PAGELOAD>
+       - title: Danh sách khoa
+         payload: /danh_sach_khoa
+       - title: Thuận lợi và hỗ trợ
+         payload: /thuan_loi_ho_tro
+       - title: Học phí và học bổng 
+         payload: /Hoc_phi_hoc_bong
+       - title: Thông tin ký túc xá
+         payload: /Thong_tin_ktx
+  utter_khoa_su_pham:
+  - text: |-
+      Đây là thông tin khoa sư phạm Email khoasupham@dlu.edu.vn ; 
+      Website http://sp.dlu.edu.vn ; 
+      Fanpage https://www.facebook.com/KhoaSuphamDaihocDalat/ ; 
       sđt 0263 3826 911
     quick_replies:
        - title: Điểm chuẩn
@@ -945,13 +999,7 @@ responses:
           payload: /Kytucxa
   utter_qd_bo:
     - text: |-
-        Nếu bạn là một trong những đối tượng của điều 7 phần 2 của Quy
-
-        chế tuyển sinh của Bộ, bạn sẽ được tuyển thẳng vào trường
-
-        nhé. Chi tiết về quy chế bạn có thể tham khảo văn bản sau:
-
-
+        Nếu bạn là một trong những đối tượng của điều 7 phần 2 của Quy chế tuyển sinh của Bộ, bạn sẽ được tuyển thẳng vào trường nhé. Chi tiết về quy chế bạn có thể tham khảo văn bản sau:
         https://moet.gov.vn/content/vanban/Lists/VBPQ/Attachments/1239/Quy%20che%20tuyen%20sinh.pdf
       quick_replies:
         - title: Tuyển sinh 2023

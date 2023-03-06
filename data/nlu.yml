@@ -1396,6 +1396,12 @@ nlu:
     - ưu diểm của ngành thạc sĩ
     - học thạc sĩ thì có lợi gì
     - tại sao phải học thạc sĩ
+- intent: danh_sach_khoa
+  examples: |
+      - danh sách các khoa
+      - các khoa
+
+
 - intent: khoa_toan_tin
   examples: |
     - thông tin của khoa toán tin

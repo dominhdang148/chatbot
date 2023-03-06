@@ -184,6 +184,12 @@ rules:
   steps:
   - intent: uu_diem_thac_si
   - action: utter_uu_diem_nganh_thac_si
+
+- rule: danh_sach_khoa_dlu
+  steps:
+  - intent: danh_sach_khoa
+  - action: utter_danh_sach_khoa
+
 - rule: khoa_toan_tin
   steps:
   - intent: khoa_toan_tin
