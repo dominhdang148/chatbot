@@ -5,9 +5,10 @@ config:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 intents:
   - thuan_loi_ho_tro:
-      use_entities: truen
+      use_entities: true
   - hoc_song_nganh:
       use_entities: true
   - hoc_tich_luy_hoc_phan_thac_si:
@@ -231,6 +232,7 @@ entities:
   - Ngon_ngu_anh
   - de_kiem_viec
 slots: {}
+
 responses:
   utter_greet:
     - text: |-
@@ -268,30 +270,36 @@ responses:
   utter_ask_bot_name:
     - text: Tôi tên DLUBot. Rất vui được hỗ trợ bạn.
   utter_did_that_help:
-    - text: Thông tin mà tôi cung cấp có đúng yêu cầu của bạn chưa. Nếu chưa bạn hãy
+    - text:
+        Thông tin mà tôi cung cấp có đúng yêu cầu của bạn chưa. Nếu chưa bạn hãy
         đặt lại câu hỏi rõ ràng hơn chút nhé.?
   utter_sorry:
-    - text: Tôi xin lỗi vì chưa quá thông minh nên chưa hiểu được bạn muốn hỏi gì. Bạn
+    - text:
+        Tôi xin lỗi vì chưa quá thông minh nên chưa hiểu được bạn muốn hỏi gì. Bạn
         hãy hỏi lại đơn giản, rõ ràng hơn giúp tôi nhé.
   utter_thanks:
     - text: Không có gì. Tôi luôn sẵn sàng hỗ trợ bạn. cảm ơn bạn đã hỏi.
   utter_happy:
-    - text: Cảm ơn bạn đã khen tôi. Tôi luôn sẵn lòng cung cấp thông tin cho bạn bất
+    - text:
+        Cảm ơn bạn đã khen tôi. Tôi luôn sẵn lòng cung cấp thông tin cho bạn bất
         cứ lúc nào
   utter_admission_deadline:
     - text: Hiện tại đã hết hạn nộp hồ sơ xét tuyển học bạ rồi ạ.
   utter_records:
-    - text: Hồ sơ gồm phiếu đăng ký xét tuyển; bản sao học bạ THPT lớp 11, 12 hoặc kết
+    - text:
+        Hồ sơ gồm phiếu đăng ký xét tuyển; bản sao học bạ THPT lớp 11, 12 hoặc kết
         quả kỳ thi đánh giá năng lực của ĐHQG HCM
   utter_type_admission:
-    - text: trường có 2 hình thức xét tuyển là xét tuyển bằng điểm thi tốt nghiệp THPT
+    - text:
+        trường có 2 hình thức xét tuyển là xét tuyển bằng điểm thi tốt nghiệp THPT
         quốc gia và xét tuyển bằng học bạ hoặc kết quả kỳ thi đánh giá năng lực
         của ĐHQG HCM. Chi tiết bạn xem tại https://tuyensinh.dlu.edu.vn/
   utter_time:
-    - text: Hiện tại đã hết hạn nhận hồ sơ xét tuyển học bạ. Bạn vui lòng chờ các
+    - text:
+        Hiện tại đã hết hạn nhận hồ sơ xét tuyển học bạ. Bạn vui lòng chờ các
         thông báo khác của trường tại website www.dlu.edu.vn.
   utter_receive_address:
-    - text: >-
+    - text: |-
         Bắt đầu từ ngày 26/06/2021, các thí sinh không nộp hồ sơ xét tuyển trực
         tiếp tại trường mà nộp qua bưu điện.
 
@@ -301,33 +309,40 @@ responses:
   utter_Coxetonline:
     - text: Hiện trường không có xét tuyển online bạn nhé.
   utter_hocphi:
-    - text: Học phí trung bình khoảng 6 - 8 triệu một học kỳ bạn nhé. Một năm khoảng
+    - text:
+        Học phí trung bình khoảng 6 - 8 triệu một học kỳ bạn nhé. Một năm khoảng
         12-13 triệu.
   utter_kytucxa:
     - text: trường có ký túc xá bạn nhé, cách trường khoảng 1.5km.
   utter_iamabot:
     - text: Tôi là người máy trợ lý được tạo bởi ĐHĐL
   utter_no_entity:
-    - text: Tôi không xác định được thông tin từ câu hỏi của bạn. Bạn kiểm tra lại
+    - text:
+        Tôi không xác định được thông tin từ câu hỏi của bạn. Bạn kiểm tra lại
         giúp tôi tên ngành bạn nhập đúng chưa nhé. Nếu đúng rồi thì bạn đặt câu
         hỏi đơn giản hơn tí nhé.
   utter_show_ability:
-    - text: Tôi có thể cung cấp cho bạn các thông tin liên quan tới công tác tuyển
+    - text:
+        Tôi có thể cung cấp cho bạn các thông tin liên quan tới công tác tuyển
         sinh tại trường Đại học Đà Lạt
   utter_Dieu_kien_xet_tuyen_nganh_su_pham:
-    - text: Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm
+    - text:
+        Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm
         xét tốt nghiệp THPT đạt từ 8.0 trở lên.
   utter_Dieu_kien_xet_tuyen_cac_nganh:
-    - text: Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm
+    - text:
+        Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm
         xét tốt nghiệp THPT đạt từ 8.0 trở lên. Các ngành còn lại  yêu cầu tổng
         điểm 3 môn trong tổ hợp môn ĐKXT phải lớn hơn hoặc bằng 17 và không có
         môn nào trong tổ hợp môn ĐKXT có điểm trung bình dưới 5.0.
   utter_Unexpected:
-    - text: Câu hỏi này tôi không thể trả lời được. Bạn có thể đặt câu hỏi trong các
+    - text:
+        Câu hỏi này tôi không thể trả lời được. Bạn có thể đặt câu hỏi trong các
         buổi tư vấn tuyển sinh của trường hoặc liên hệ email
         phongquanlydaotao@dlu.edu.vn để được tư vấn rõ hơn.
   utter_Cach_tinh_diem_xet_tuyen_hoc_ba:
-    - text: a) Xét tuyển dựa vào kết quả học tập lớp 12 hoặc kết quả lớp 11 cộng với
+    - text:
+        a) Xét tuyển dựa vào kết quả học tập lớp 12 hoặc kết quả lớp 11 cộng với
         học kỳ 1 lớp 12; lấy tổng điểm 3 môn trong tổ hợp môn đăng ký xét
         tuyển.b) Nếu thí sinh sử dụng kết quả học tập lớp 12 để ĐKXT thì lấy
         tổng điểm 3 môn tổng kết năm lớp 12 trong tổ hợp môn mà thí sinh sử dụng
@@ -344,7 +359,8 @@ responses:
         học; Nếu trong tổ hợp môn ĐKXT có môn KHXH thì điểm của môn KHXH là điểm
         trung bình cộng của 3 môn Lịch sử, Địa lý và Giáo dục công dân
   utter_fallback:
-    - text: Tôi xin lỗi, tôi chưa hiểu ý muốn của bạn. Bạn có thể hỏi câu đơn giản, rõ
+    - text:
+        Tôi xin lỗi, tôi chưa hiểu ý muốn của bạn. Bạn có thể hỏi câu đơn giản, rõ
         ràng hơn được không? Cảm ơn bạn.
   utter_thuan_loi_va_ho_tro:
     - text: Những thuân lợi và hỗ trợ khi các bạn học ở trường đại học Đà Lạt.
@@ -393,14 +409,16 @@ responses:
         - title: Học song ngành
           payload: /hoc_song_nganh
   utter_doi_tuong_hoc_song_nganh:
-    - text: Tất cả sinh viên Trường Đại học Đà Lạt thỏa mãn các điều kiện theo quy
+    - text:
+        Tất cả sinh viên Trường Đại học Đà Lạt thỏa mãn các điều kiện theo quy
         định đều có quyền đăng ký học một chương trình đào tạo khác để lấy thêm
         văn bằng thứ hai trong quá trình học tập.
       quick_replies:
         - title: Học song ngành
           payload: /hoc_song_nganh
   utter_uu_diem_hoc_song_nganh:
-    - text: Nhằm nâng cao sự thích ứng của sinh viên với nhu cầu của doanh nghiệp, đòi
+    - text:
+        Nhằm nâng cao sự thích ứng của sinh viên với nhu cầu của doanh nghiệp, đòi
         hỏi của xã hội cũng như tạo điều kiện cho sinh viên có cơ hội tiếp cận
         thêm ngành học mình yêu thích và nhận được hai văn bằng chính quy để dễ
         dàng tìm kiếm việc làm sau khi tốt nghiệp, Trường Đại học Đà Lạt đào tạo
@@ -409,7 +427,8 @@ responses:
         - title: Học song ngành
           payload: /hoc_song_nganh
   utter_dieu_kien_hoc_song_nganh:
-    - text: Sau khi hoàn tất học kì thứ I, nếu sinh viên đạt điểm trung bình học kì từ
+    - text:
+        Sau khi hoàn tất học kì thứ I, nếu sinh viên đạt điểm trung bình học kì từ
         2.0 theo thang điểm 4 (của chương trình thứ I) trở lên có thể đăng ký
         học thêm một bằng Đại học thứ 2 theo hình thức song ngành.
       quick_replies:
@@ -434,7 +453,8 @@ responses:
         - title: Học tích lũy thạc sĩ
           payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_uu_diem_nganh_thac_si:
-    - text: Sinh viên đang theo học các chương trình đào tạo trình độ đại học ngành
+    - text:
+        Sinh viên đang theo học các chương trình đào tạo trình độ đại học ngành
         phù hợp hết năm thứ 2, có điểm trung bình tích lũy xếp loại khá trở lên
         được đăng ký học trước một số học phần của chương trình đào tạo trình độ
         thạc sĩ của Trường, nhằm tiếp cận kiến thức chuyên sâu và có điều kiện
@@ -451,19 +471,23 @@ responses:
         http://sp.dlu.edu.vn ; Fanpage
         https://www.facebook.com/KhoaSuphamDaihocDalat/ ; sđt 0263 3826 911
   utter_khoa_VatLyKyThuatHatNhan:
-    - text: Đây là thông tin khoa Vật Lý Kỹ Thuật Hạt Nhân Email khoavatly@dlu.edu.vn
+    - text:
+        Đây là thông tin khoa Vật Lý Kỹ Thuật Hạt Nhân Email khoavatly@dlu.edu.vn
         ; Website http://vl.dlu.edu.vn ; Fanpage
         https://www.facebook.com/khoavatlydalat/ ; sđt 0263 3822 246
   utter_khoa_CNTT:
-    - text: Đây là thông tin khoa Công Nghệ Thông Tin Email it@dlu.edu.vn ; Website
+    - text:
+        Đây là thông tin khoa Công Nghệ Thông Tin Email it@dlu.edu.vn ; Website
         http://cntt.dlu.edu.vn ; Fanpage
         https://www.facebook.com/InformationTechnologyDLU/ ; sđt 0263 3552 540
   utter_khoa_HoahocVaMoitruong:
-    - text: Đây là thông tin khoa Hóa Học và Môi Trường Email khoahhmt@dlu.edu.vn ;
+    - text:
+        Đây là thông tin khoa Hóa Học và Môi Trường Email khoahhmt@dlu.edu.vn ;
         Website http://khhmt.dlu.edu.vn ; Fanpage
         https://www.facebook.com/khoahoahocvamoitruongdlu/ ; sđt 0263 3834 046
   utter_khoa_SinhHoc:
-    - text: Đây là thông tin khoa Sinh Học Email  khoasinhhoc@dlu.edu.vn ; Website
+    - text:
+        Đây là thông tin khoa Sinh Học Email  khoasinhhoc@dlu.edu.vn ; Website
         http://ksh.dlu.edu.vn ; Fanpage
         https://www.facebook.com/khoasinhoc/?locale=vi_VN ; sđt 0263 3834 050
   utter_khoa_KinhteQuantrikinhdoanh:
@@ -471,11 +495,13 @@ responses:
         khoakinhte_qtkd@dlu.edu.vn ; Website http://kktqt.dlu.edu.vn ; Fanpage
         https://www.facebook.com/ktqtkd.dlu/?locale=vi_VN ; sđt 0263 3831 105
   utter_khoa_NongLam:
-    - text: Đây là thông tin khoa Nông Lâm Email khoanonglam@dlu.edu.vn ; Website
+    - text:
+        Đây là thông tin khoa Nông Lâm Email khoanonglam@dlu.edu.vn ; Website
         http://knl.dlu.edu.vn ; Fanpage
         https://www.facebook.com/Nonglam.DLU/?locale=vi_VN ; sđt 0263 3834 051
   utter_khoa_LuatHoc:
-    - text: Đây là thông tin khoa Luât Học  Email khoaluathoc@dlu.edu.vn ; Website
+    - text:
+        Đây là thông tin khoa Luât Học  Email khoaluathoc@dlu.edu.vn ; Website
         http://klh.dlu.edu.vn ; Fanpage
         https://www.facebook.com/tuoitrekhoaluatdlu/; sđt 0263 3554 457
   utter_khoa_DuLich:
@@ -483,7 +509,8 @@ responses:
         Website http://kqtdl.dlu.edu.vn ; Fanpage
         https://www.facebook.com/khoaqtdulichdalat/ ; sđt 0263 3552 165
   utter_khoa_QuocTeHoc:
-    - text: Đây là thông tin khoa Quốc Tế Học Email khoaquoctehoc@dlu.edu.vn ; Website
+    - text:
+        Đây là thông tin khoa Quốc Tế Học Email khoaquoctehoc@dlu.edu.vn ; Website
         http://kqth.dlu.edu.vn ; Fanpage
         https://www.facebook.com/Qth.dlu/?locale=vi_VN
   utter_khoa_NguVanvaLichSu:
@@ -496,7 +523,8 @@ responses:
         khoaxhh_ctxh@dlu.edu.vn ; Website http://kctxh.dlu.edu.vn ; Fanpage
         https://www.facebook.com/XHHCTXHDLU/ ; sđt 0263 3834 469
   utter_khoa_NgoaiNgu:
-    - text: Đây là thông tin khoa Ngoại Ngữ Email khoangoaingu@dlu.edu.vn ; Website
+    - text:
+        Đây là thông tin khoa Ngoại Ngữ Email khoangoaingu@dlu.edu.vn ; Website
         http://nn.dlu.edu.vn ; Fanpage
         https://www.facebook.com/groups/231966513525512/
   utter_tuyen_sinh:
@@ -774,7 +802,7 @@ responses:
         - title: Ký túc xá
           payload: /Kytucxa
   utter_qd_bo:
-    - text: >-
+    - text: |-
         Nếu bạn là một trong những đối tượng của điều 7 phần 2 của Quy
 
         chế tuyển sinh của Bộ, bạn sẽ được tuyển thẳng vào trường
