@@ -181,7 +181,7 @@ class ActionCongViecRaTruong(Action):
         dispatcher.utter_message(resultText)
 
         return []
-
+ 
 
 class ActionThongTinNganh(Action):
     def name(self) -> Text:
@@ -290,59 +290,6 @@ class ActionCacKhoa(Action):
         for i in range(3, 67):
             name = sheet.cell(row=i, column=5).value
             resultDict.add(name)
-        for item in resultDict:
-            resultText += item + "\n"
-        dispatcher.utter_message(resultText)
-
-        return []
-
-
-class ActionNganhSuPham(Action):
-    def name(self) -> Text:
-        return "action_nganh_su_pham"
-
-    def run(
-        self,
-        dispatcher: "CollectingDispatcher",
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
-
-        quickReplies = []
-        resultDict = set()
-        resultText = "Danh sách các ngành sư phạm gồm: \n"
-        wb = openpyxl.load_workbook("Test-v2.xlsx")
-        sheet = wb["Sheet1"]
-        for i in range(3, 67):
-            name = sheet.cell(row=i, column=5).value
-            if name == "KHOA SƯ PHẠM":
-                resultDict.add(sheet.cell(row=i, column=20))
-        for item in resultDict:
-            resultText += item + "\n"
-        dispatcher.utter_message(resultText)
-
-        return []
-
-
-class ActionNganhTongHop(Action):
-    def name(self) -> Text:
-        return "action_nganh_tong_hop"
-
-    def run(
-        self,
-        dispatcher: "CollectingDispatcher",
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
-
-        resultDict = set()
-        resultText = "Danh sách các ngành tổng hợp gồm: \n"
-        wb = openpyxl.load_workbook("Test-v2.xlsx")
-        sheet = wb["Sheet1"]
-        for i in range(3, 67):
-            name = sheet.cell(row=i, column=5).value
-            if name != "KHOA SƯ PHẠM":
-                resultDict.add(sheet.cell(row=i, column=20))
         for item in resultDict:
             resultText += item + "\n"
         dispatcher.utter_message(resultText)

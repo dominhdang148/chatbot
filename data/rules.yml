@@ -232,7 +232,7 @@ rules:
 
 - rule: khoa_LuatHoc
   steps:
-  - intent:  khoa_LuatHoc
+  - intent: khoa_LuatHoc
   - action: utter_khoa_LuatHoc
 
 - rule: khoa_DuLich
@@ -254,10 +254,84 @@ rules:
   steps:
   - intent: khoa_NgoaiNgu
   - action: utter_khoa_NgoaiNgu
-- rule: xet tuyen
+
+# Tuyển sinh 2023
+
+- rule: Cac nganh dai hoc
+  steps:  
+  - intent: cac_nganh_dai_hoc
+  - action: utter_cac_nganh_dai_hoc
+
+- rule: Nhom nganh su pham
   steps:
-  - intent: phuong_thuc_xet_tuyen
-  - action: utter_phuong_thuc_xet_tuyen
+  - intent: nhom_su_pham
+  - action: utter_nhom_su_pham
+
+- rule: Cac nganh su pham
+  steps:
+  - intent: ds_su_pham
+  - action: utter_ds_su_pham
+
+- rule: Xet tuyen su pham
+  steps:
+  - intent: xt_su_pham
+  - action: utter_xt_su_pham 
+
+- rule: Dieu kien xet tuyen su pham
+  steps:
+  - intent: dk_xt_sp
+  - action: utter_dk_xt_sp
+
+- rule: Chi Tieu xet tuyen
+  steps:
+  - intent: chi_tieu_xt_sp
+  - action: utter_chi_tieu_xt_sp
+
+- rule: Ho tro xet tuyen
+  steps:
+  - intent: ho_tro_sp
+  - action: utter_ho_tro_sp
+
+- rule: Chon nganh SP
+  steps:
+  - intent: chon_nganh_sp
+  - action: utter_chon_nganh_sp
+
+- rule: Thong tin nganh su pham
+  steps: 
+  - intent: thong_tin_nganh_sp
+  - action: utter_thong_tin_sp
+
+- rule: Chuan dau ra nganh su pham
+  steps:
+  - intent: chuan_dau_ra_sp
+  - action: utter_chuan_dau_ra_sp
+
+- rule: Co hoi viec lam nganh su pham
+  steps:
+  - intent: co_hoi_viec_lam_sp
+  - action: utter_co_hoi_viec_lam_sp
+
+- rule: Tra cuu diem chuan
+  steps: 
+  - intent: diem_chuan
+  - action: action_diem_chuan
+
+- rule: tra cuu ma nganh
+  steps: 
+  - intent: ma_nganh
+  - action: action_ma_nganh
+
+- rule: Chi tieu tung nganh
+  steps:
+  - intent: chi_tieu_du_kien
+  - action: action_chi_tieu_du_kien
+
+- rule: To hop xet tuyen
+  steps: 
+  - intent: to_hop_xet_tuyen
+  - action: action_to_hop_xet_tuyen
+
 - rule: ask_school_id
   steps:
   - intent: ma_truong
@@ -358,22 +432,17 @@ rules:
   - intent: qd_bo
   - action: utter_qd_bo
 
-- rule: Tuyen sinh
+- rule: tuyen sinh
   steps:
   - intent: tuyen_sinh
   - action: utter_tuyen_sinh
 
-- rule: Nganh Tuyen Sinh
-  steps:
+- rule: nganh tuyen sinh
+  steps: 
   - intent: nganh_tuyen_sinh
   - action: utter_nganh_tuyen_sinh
 
-- rule: Nganh Su Pham
-  steps:
-  - intent: nganh_su_pham
-  - action: action_nganh_su_pham
-
-- rule: Nganh tong hop
-  steps:
-  - intent: nganh_tong_hop
-  - action: action_nganh_tong_hop
+- rule: dai hoc
+  steps: 
+  - intent: dai_hoc
+  - action: utter_dai_hoc

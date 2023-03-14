@@ -182,3 +182,14 @@ stories:
   - action: action_Cac_nganh_dao_tao
   - intent: Dieu_kien_xet_tuyen_nganh_su_pham
   - action: utter_Dieu_kien_xet_tuyen_nganh_su_pham
+
+- story: Tu van tuyen sinh su pham
+  steps:
+  - intent: ds_su_pham
+  - action: utter_ds_su_pham
+  - intent: chon_nganh_sp
+    entities:
+    - nganh : "Giao_duc_tieu_hoc"
+  - slot_was_set:
+      - nganh: "Giao_duc_tieu_hoc"
+  - action: utter_chon_nganh_sp

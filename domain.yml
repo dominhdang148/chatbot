@@ -29,14 +29,16 @@ intents:
       use_entities: true
   - uu_diem_thac_si:
       use_entities: true
+  - danh_sach_khoa:
+      use_entities: true
   - khoa_toan_tin:
       use_entities: true
   - khoa_su_pham:
       use_entities: true
   - khoa_VatLyKyThuatHatNhan:
       use_entities: true
-  - khoa_ToanHoc:
-      use_entities: true
+  # - khoa_ToanHoc:
+  #     use_entities: true
   - khoa_CNTT:
       use_entities: true
   - khoa_HoahocVaMoitruong:
@@ -155,33 +157,44 @@ intents:
       use_entities: true
   - Cac_nganh_dao_tao:
       use_entities: true
-  - tuyen_sinh
-  - ma_truong
-  - phuong_thuc_xet_tuyen
-  - hoc_ba
-  - thptqg
-  - dgnl
-  - xet_thang
-  - ho_so_hoc_ba
-  - tinh_diem_hoc_ba
-  - cach_nop_hoc_ba
-  - thoi_han_hoc_ba
-  - ho_so_thpt
-  - cach_thuc_thpt
-  - thoi_han_thpt
-  - ho_so_dgnl
-  - cach_thuc_dgnl
-  - thoi_han_dgnl
-  - qd_truong
-  - qd_bo
-  - truc_tiep
-  - buu_dien
-  - nganh_tuyen_sinh
-  - nganh_dh
-  - nganh_ts
-  - nganh_ths
-  - nganh_tong_hop
-  - nganh_su_pham
+
+  # tuyển sinh 2023
+  - cac_nganh_dai_hoc:
+      use_entities: true
+  - nhom_su_pham:
+      use_entities: true
+  - ds_su_pham:
+      use_entities: true
+  - xt_su_pham: 
+      use_entities: true
+  - chon_nganh_sp:
+      use_entities: true
+  - dk_xt_sp:
+      use_entities: true
+  - chi_tieu_xt_sp:
+      use_entities: true
+  - ho_tro_sp:
+      use_entities: true
+  - thong_tin_nganh_sp:
+      use_entities: true
+  - chuan_dau_ra_sp:
+      use_entities: true
+  - co_hoi_viec_lam_sp:
+      use_entities: true
+  - diem_chuan: 
+      use_entities: true
+  - ma_nganh:
+      use_entities: true
+  - chi_tieu_du_kien:
+      use_entities: true
+  - to_hop_xet_tuyen:
+      use_entities: true
+  - tuyen_sinh:
+      use_entities: true
+  - nganh_tuyen_sinh:
+      use_entities: true
+  - dai_hoc:
+      use_entities: true
 entities:
   - admission_deadline
   - records
@@ -231,286 +244,213 @@ entities:
   - Quan_tri_du_lich
   - Ngon_ngu_anh
   - de_kiem_viec
-slots: {}
+  - nganh
+slots: 
+  nganh:
+    type: categorical
+    values:
+      - Su_pham_toan
+      - Su_pham_tin
+      - Giao_duc_tieu_hoc
+      - Su_pham_vat_ly
+      - Su_pham_hoa_hoc
+      - Su_pham_sinh_hoc
+      - Su_pham_ngu_van
+      - Su_pham_lich_su
+      - Su_pham_tieng_anh
 
 responses:
   utter_greet:
-    - text: |-
-        Chào bạn. 
-
-        Tôi là chatbot được thiết kế để cung cấp cho bạn một số thông tin tuyển sinh hệ đại học chính quy trường ĐHĐL như:
-
-        - Điểm chuẩn học bạ, THPT các ngành
-
-        - Hồ sơ xét tuyển học bạ
-
-        - Giới thiệu các ngành: thông tin, vị trí việc làm, tỉ lệ việc làm
-
-        - Thông tin việc làm các ngành
-
-        - Mã ngành của các ngành tuyển sinh
-
-        - Tổ hợp xét tuyển
-
-        - Thuận lợi và hỗ trợ
-      quick_replies:
-        - title: Điểm chuẩn
-          payload: <POSTBACK_PAGELOAD>
-        - title: Hồ sơ xét tuyển
-          payload: <POSTBACK_PAGELOAD>
-        - title: Thuận lợi và hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: tuyen_sinh
-          payload: /tuyen_sinh
+  - text: |-
+      Chào bạn. 
+      Tôi là chatbot được thiết kế để cung cấp cho bạn một số thông tin tuyển sinh hệ đại học chính quy trường ĐHĐL như:
+      - Điểm chuẩn học bạ, THPT các ngành
+      - Hồ sơ xét tuyển học bạ
+      - Giới thiệu các ngành: thông tin, vị trí việc làm, tỉ lệ việc làm
+      - Thông tin việc làm các ngành
+      - Mã ngành của các ngành tuyển sinh
+      - Tổ hợp xét tuyển
+      - Thuận lợi và hỗ trợ
+    quick_replies:
+      - title: Điểm chuẩn
+        payload: <POSTBACK_PAGELOAD>
+      - title: Hồ sơ xét tuyển
+        payload: <POSTBACK_PAGELOAD>
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: tuyen_sinh
+        payload: /tuyen_sinh
   utter_goodbye:
-    - image: https://i.imgur.com/nGF1K8f.jpg
-      text: Tạm biệt. Cảm ơn vì đã hỏi tôi. Tôi luôn sẵn sàng phục vụ.
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: Tạm biệt. Cảm ơn vì đã hỏi tôi. Tôi luôn sẵn sàng phục vụ.
   utter_howareyou:
-    - text: Tôi vẫn khỏe, cảm ơn bạn đã hỏi thăm. Chúc bạn một ngày tốt lành.
+  - text: Tôi vẫn khỏe, cảm ơn bạn đã hỏi thăm. Chúc bạn một ngày tốt lành.
   utter_ask_bot_name:
-    - text: Tôi tên DLUBot. Rất vui được hỗ trợ bạn.
+  - text: Tôi tên DLUBot. Rất vui được hỗ trợ bạn.
   utter_did_that_help:
-    - text:
-        Thông tin mà tôi cung cấp có đúng yêu cầu của bạn chưa. Nếu chưa bạn hãy
-        đặt lại câu hỏi rõ ràng hơn chút nhé.?
+  - text: Thông tin mà tôi cung cấp có đúng yêu cầu của bạn chưa. Nếu chưa bạn hãy đặt lại câu hỏi rõ ràng hơn chút nhé.?
   utter_sorry:
-    - text:
-        Tôi xin lỗi vì chưa quá thông minh nên chưa hiểu được bạn muốn hỏi gì. Bạn
-        hãy hỏi lại đơn giản, rõ ràng hơn giúp tôi nhé.
+  - text: Tôi xin lỗi vì chưa quá thông minh nên chưa hiểu được bạn muốn hỏi gì. Bạn hãy hỏi lại đơn giản, rõ ràng hơn giúp tôi nhé.
   utter_thanks:
-    - text: Không có gì. Tôi luôn sẵn sàng hỗ trợ bạn. cảm ơn bạn đã hỏi.
+  - text: Không có gì. Tôi luôn sẵn sàng hỗ trợ bạn. cảm ơn bạn đã hỏi.
   utter_happy:
-    - text:
-        Cảm ơn bạn đã khen tôi. Tôi luôn sẵn lòng cung cấp thông tin cho bạn bất
-        cứ lúc nào
+  - text: Cảm ơn bạn đã khen tôi. Tôi luôn sẵn lòng cung cấp thông tin cho bạn bất cứ lúc nào
   utter_admission_deadline:
-    - text: Hiện tại đã hết hạn nộp hồ sơ xét tuyển học bạ rồi ạ.
+  - text: Hiện tại đã hết hạn nộp hồ sơ xét tuyển học bạ rồi ạ.
   utter_records:
-    - text:
-        Hồ sơ gồm phiếu đăng ký xét tuyển; bản sao học bạ THPT lớp 11, 12 hoặc kết
-        quả kỳ thi đánh giá năng lực của ĐHQG HCM
+  - text: Hồ sơ gồm phiếu đăng ký xét tuyển; bản sao học bạ THPT lớp 11, 12 hoặc kết quả kỳ thi đánh giá năng lực của ĐHQG HCM
   utter_type_admission:
-    - text:
-        trường có 2 hình thức xét tuyển là xét tuyển bằng điểm thi tốt nghiệp THPT
-        quốc gia và xét tuyển bằng học bạ hoặc kết quả kỳ thi đánh giá năng lực
-        của ĐHQG HCM. Chi tiết bạn xem tại https://tuyensinh.dlu.edu.vn/
+  - text: trường có 2 hình thức xét tuyển là xét tuyển bằng điểm thi tốt nghiệp THPT quốc gia và xét tuyển bằng học bạ hoặc kết quả kỳ thi đánh giá năng lực của ĐHQG HCM. Chi tiết bạn xem tại https://tuyensinh.dlu.edu.vn/
   utter_time:
-    - text:
-        Hiện tại đã hết hạn nhận hồ sơ xét tuyển học bạ. Bạn vui lòng chờ các
-        thông báo khác của trường tại website www.dlu.edu.vn.
+  - text: Hiện tại đã hết hạn nhận hồ sơ xét tuyển học bạ. Bạn vui lòng chờ các thông báo khác của trường tại website www.dlu.edu.vn.
   utter_receive_address:
-    - text: |-
+  - text: |-
         Bắt đầu từ ngày 26/06/2021, các thí sinh không nộp hồ sơ xét tuyển trực
-        tiếp tại trường mà nộp qua bưu điện.
-
-        Địa chỉ nhận hồ sơ là Văn phòng – Phòng Tổ chức – Hành chính, Trường Đại học Đà Lạt, Số 01 Phù Đổng Thiên Vương, P8, Tp. Đà Lạt, tỉnh Lâm Đồng
+        tiếp tại trường mà nộp qua bưu điện. Địa chỉ nhận hồ sơ là Văn phòng – Phòng Tổ chức – Hành chính, Trường Đại học Đà Lạt, Số 01 Phù Đổng Thiên Vương, P8, Tp. Đà Lạt, tỉnh Lâm Đồng
   utter_Coxethb:
-    - text: Trường có xét học bạ bạn nhé.
+  - text: Trường có xét học bạ bạn nhé.
   utter_Coxetonline:
-    - text: Hiện trường không có xét tuyển online bạn nhé.
+  - text: Hiện trường không có xét tuyển online bạn nhé.
   utter_hocphi:
-    - text:
-        Học phí trung bình khoảng 6 - 8 triệu một học kỳ bạn nhé. Một năm khoảng
-        12-13 triệu.
+  - text: Học phí trung bình khoảng 6 - 8 triệu một học kỳ bạn nhé. Một năm khoảng 12-13 triệu.
   utter_kytucxa:
-    - text: trường có ký túc xá bạn nhé, cách trường khoảng 1.5km.
+  - text: trường có ký túc xá bạn nhé, cách trường khoảng 1.5km.
   utter_iamabot:
-    - text: Tôi là người máy trợ lý được tạo bởi ĐHĐL
+  - text: Tôi là người máy trợ lý được tạo bởi ĐHĐL
   utter_no_entity:
-    - text:
-        Tôi không xác định được thông tin từ câu hỏi của bạn. Bạn kiểm tra lại
-        giúp tôi tên ngành bạn nhập đúng chưa nhé. Nếu đúng rồi thì bạn đặt câu
-        hỏi đơn giản hơn tí nhé.
+  - text: Tôi không xác định được thông tin từ câu hỏi của bạn. Bạn kiểm tra lại giúp tôi tên ngành bạn nhập đúng chưa nhé. Nếu đúng rồi thì bạn đặt câu hỏi đơn giản hơn tí nhé.
   utter_show_ability:
-    - text:
-        Tôi có thể cung cấp cho bạn các thông tin liên quan tới công tác tuyển
-        sinh tại trường Đại học Đà Lạt
+  - text: Tôi có thể cung cấp cho bạn các thông tin liên quan tới công tác tuyển sinh tại trường Đại học Đà Lạt
   utter_Dieu_kien_xet_tuyen_nganh_su_pham:
-    - text:
-        Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm
-        xét tốt nghiệp THPT đạt từ 8.0 trở lên.
+  - text: Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm xét tốt nghiệp THPT đạt từ 8.0 trở lên.
   utter_Dieu_kien_xet_tuyen_cac_nganh:
-    - text:
-        Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm
-        xét tốt nghiệp THPT đạt từ 8.0 trở lên. Các ngành còn lại  yêu cầu tổng
-        điểm 3 môn trong tổ hợp môn ĐKXT phải lớn hơn hoặc bằng 17 và không có
-        môn nào trong tổ hợp môn ĐKXT có điểm trung bình dưới 5.0.
+  - text: Các ngành Sư phạm thí sinh phải có học lực lớp 12 đạt loại giỏi hoặc điểm xét tốt nghiệp THPT đạt từ 8.0 trở lên. Các ngành còn lại  yêu cầu tổng điểm 3 môn trong tổ hợp môn ĐKXT phải lớn hơn hoặc bằng 17 và không có môn nào trong tổ hợp môn ĐKXT có điểm trung bình dưới 5.0.
   utter_Unexpected:
-    - text:
-        Câu hỏi này tôi không thể trả lời được. Bạn có thể đặt câu hỏi trong các
-        buổi tư vấn tuyển sinh của trường hoặc liên hệ email
-        phongquanlydaotao@dlu.edu.vn để được tư vấn rõ hơn.
+  - text: Câu hỏi này tôi không thể trả lời được. Bạn có thể đặt câu hỏi trong các buổi tư vấn tuyển sinh của trường hoặc liên hệ email phongquanlydaotao@dlu.edu.vn để được tư vấn rõ hơn.
   utter_Cach_tinh_diem_xet_tuyen_hoc_ba:
-    - text:
-        a) Xét tuyển dựa vào kết quả học tập lớp 12 hoặc kết quả lớp 11 cộng với
-        học kỳ 1 lớp 12; lấy tổng điểm 3 môn trong tổ hợp môn đăng ký xét
-        tuyển.b) Nếu thí sinh sử dụng kết quả học tập lớp 12 để ĐKXT thì lấy
-        tổng điểm 3 môn tổng kết năm lớp 12 trong tổ hợp môn mà thí sinh sử dụng
-        để ĐKXT theo các điều kiện ở trên; c) Nếu thí sinh sử dụng kết quả học
-        tập lớp 11 cộng với học kỳ 1 lớp 12 thì phải đạt các điều kiện ở trên và
-        cách tính tổng điểm ĐKXT như sau Thí sinh A chọn tổ hợp môn ĐKXT là A00
-        Toán, Vật lý, Hóa học thì Điểm môn Toán = (Điểm tổng kết môn Toán năm
-        lớp 11 + Điểm tổng kết môn Toán HKI lớp 12)/2; Điểm môn Vật lý = (Điểm
-        tổng kết môn Vật lý năm lớp 11 + Điểm tổng kết môn Vật lý HKI lớp 12)/2;
-        Điểm môn Hóa học = (Điểm tổng kết môn Hóa học năm lớp 11 + Điểm tổng kết
-        môn Hóa học HKI lớp 12)/2; Tổng điểm ĐKXT = Điểm môn Toán + Điểm môn Vật
-        lý + Điểm môn Hóa học d) Nếu trong tổ hợp môn ĐKXT có môn KHTN thì điểm
-        của môn KHTN là điểm trung bình cộng của 3 môn Vật lý, Hoá học và Sinh
-        học; Nếu trong tổ hợp môn ĐKXT có môn KHXH thì điểm của môn KHXH là điểm
-        trung bình cộng của 3 môn Lịch sử, Địa lý và Giáo dục công dân
+  - text: |-
+      a) Xét tuyển dựa vào kết quả học tập lớp 12 hoặc kết quả lớp 11 cộng với học kỳ 1 lớp 12; lấy tổng điểm 3 môn trong tổ hợp môn đăng ký xét tuyển.b) Nếu thí sinh sử dụng kết quả học tập lớp 12 để ĐKXT thì lấy tổng điểm 3 môn tổng kết năm lớp 12 trong tổ hợp môn mà thí sinh sử dụng để ĐKXT theo các điều kiện ở trên; c) Nếu thí sinh sử dụng kết quả học tập lớp 11 cộng với học kỳ 1 lớp 12 thì phải đạt các điều kiện ở trên và cách tính tổng điểm ĐKXT như sau Thí sinh A chọn tổ hợp môn ĐKXT là A00 Toán, Vật lý, Hóa học thì Điểm môn Toán = (Điểm tổng kết môn Toán năm lớp 11 + Điểm tổng kết môn Toán HKI lớp 12)/2; Điểm môn Vật lý = (Điểm tổng kết môn Vật lý năm lớp 11 + Điểm tổng kết môn Vật lý HKI lớp 12)/2; Điểm môn Hóa học = (Điểm tổng kết môn Hóa học năm lớp 11 + Điểm tổng kết môn Hóa học HKI lớp 12)/2; Tổng điểm ĐKXT = Điểm môn Toán + Điểm môn Vật lý + Điểm môn Hóa học d) Nếu trong tổ hợp môn ĐKXT có môn KHTN thì điểm của môn KHTN là điểm trung bình cộng của 3 môn Vật lý, Hoá học và Sinh học; Nếu trong tổ hợp môn ĐKXT có môn KHXH thì điểm của môn KHXH là điểm trung bình cộng của 3 môn Lịch sử, Địa lý và Giáo dục công dân
   utter_fallback:
-    - text:
-        Tôi xin lỗi, tôi chưa hiểu ý muốn của bạn. Bạn có thể hỏi câu đơn giản, rõ
-        ràng hơn được không? Cảm ơn bạn.
+  - text: Tôi xin lỗi, tôi chưa hiểu ý muốn của bạn. Bạn có thể hỏi câu đơn giản, rõ ràng hơn được không? Cảm ơn bạn.
   utter_thuan_loi_va_ho_tro:
-    - text: Những thuân lợi và hỗ trợ khi các bạn học ở trường đại học Đà Lạt.
-      quick_replies:
-        - title: Học song ngành
-          payload: /hoc_song_nganh
-        - title: Học tích lũy thạc sĩ
-          payload: /hoc_tich_luy_hoc_phan_thac_si
+  - text: Những thuân lợi và hỗ trợ khi các bạn học ở trường đại học Đà Lạt.
+    quick_replies:
+      - title: Học song ngành
+        payload: /hoc_song_nganh
+      - title: Học tích lũy thạc sĩ
+        payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_hoc_song_nganh:
-    - text: Những thông tin về học song ngành của trường Đại học Đà Lạt.
-      quick_replies:
-        - title: Mục tiêu
-          payload: /muc_tieu_song_nganh
-        - title: Đối tượng
-          payload: doi_tuong_song_nganh
-        - title: Ưu điểm
-          payload: /uu_diem_song_nganh
-        - title: Điều kiện
-          payload: /dieu_kien_song_nganh
-        - title: Danh sách ngành
-          payload: /danh_sach_nganh_song_nganh
+  - text: Những thông tin về học song ngành của trường Đại học Đà Lạt.
+    quick_replies:
+      - title: Mục tiêu
+        payload: /muc_tieu_song_nganh
+      - title: Đối tượng
+        payload: doi_tuong_song_nganh
+      - title: Ưu điểm
+        payload: /uu_diem_song_nganh
+      - title: Điều kiện
+        payload: /dieu_kien_song_nganh
+      - title: Danh sách ngành
+        payload: /danh_sach_nganh_song_nganh
   utter_hoc_thac_si:
-    - text: Bạn vui lòng chọn.
-      quick_replies:
-        - title: Danh mục ngành
-          payload: /danh_muc_nganh_thac_si
-        - title: Giới thiệu
-          payload: /gioi_thieu_nganh_thac_si
-        - title: Ưu điểm
-          payload: /uu_diem_thac_si
+  - text: Bạn vui lòng chọn.
+    quick_replies:
+      - title: Danh mục ngành
+        payload: /danh_muc_nganh_thac_si
+      - title: Giới thiệu
+        payload: /gioi_thieu_nganh_thac_si
+      - title: Ưu điểm
+        payload: /uu_diem_thac_si
   utter_muc_tieu_hoc_song_nganh:
-    - text: |-
-        Sinh viên có cơ hội tiếp cận kiến thức của ngành thứ 2 mà mình yêu thích
-
-        và phù hợp với năng lực bản thân;
-
-
-        Dễ dàng chuyển đổi nghề nghiệp và tìm kiếm việc làm;
-
-
-        Có cơ hội học tập và nâng cao trình độ ở những bậc học cao hơn (thạc sĩ, tiến sĩ);
-
-
-        Nhận 2 bằng Đại học hệ chính quy.
-      quick_replies:
-        - title: Học song ngành
-          payload: /hoc_song_nganh
+  - text: |-
+      Sinh viên có cơ hội tiếp cận kiến thức của ngành thứ 2 mà mình yêu thích và phù hợp với năng lực bản thân; Dễ dàng chuyển đổi nghề nghiệp và tìm kiếm việc làm; Có cơ hội học tập và nâng cao trình độ ở những bậc học cao hơn (thạc sĩ, tiến sĩ); Nhận 2 bằng Đại học hệ chính quy.
+    quick_replies:
+      - title: Học song ngành
+        payload: /hoc_song_nganh
   utter_doi_tuong_hoc_song_nganh:
-    - text:
-        Tất cả sinh viên Trường Đại học Đà Lạt thỏa mãn các điều kiện theo quy
-        định đều có quyền đăng ký học một chương trình đào tạo khác để lấy thêm
-        văn bằng thứ hai trong quá trình học tập.
-      quick_replies:
-        - title: Học song ngành
-          payload: /hoc_song_nganh
+  - text: Tất cả sinh viên Trường Đại học Đà Lạt thỏa mãn các điều kiện theo quy định đều có quyền đăng ký học một chương trình đào tạo khác để lấy thêm văn bằng thứ hai trong quá trình học tập.
+    quick_replies:
+    - title: Học song ngành
+      payload: /hoc_song_nganh
   utter_uu_diem_hoc_song_nganh:
-    - text:
-        Nhằm nâng cao sự thích ứng của sinh viên với nhu cầu của doanh nghiệp, đòi
-        hỏi của xã hội cũng như tạo điều kiện cho sinh viên có cơ hội tiếp cận
-        thêm ngành học mình yêu thích và nhận được hai văn bằng chính quy để dễ
-        dàng tìm kiếm việc làm sau khi tốt nghiệp, Trường Đại học Đà Lạt đào tạo
-        cùng lúc hai chương trình đối với sinh viên đang học tại Trường.
-      quick_replies:
-        - title: Học song ngành
-          payload: /hoc_song_nganh
+  - text: Nhằm nâng cao sự thích ứng của sinh viên với nhu cầu của doanh nghiệp, đòi hỏi của xã hội cũng như tạo điều kiện cho sinh viên có cơ hội tiếp cận thêm ngành học mình yêu thích và nhận được hai văn bằng chính quy để dễ dàng tìm kiếm việc làm sau khi tốt nghiệp, Trường Đại học Đà Lạt đào tạo cùng lúc hai chương trình đối với sinh viên đang học tại Trường.
+    quick_replies:
+      - title: Học song ngành
+        payload: /hoc_song_nganh
   utter_dieu_kien_hoc_song_nganh:
-    - text:
-        Sau khi hoàn tất học kì thứ I, nếu sinh viên đạt điểm trung bình học kì từ
-        2.0 theo thang điểm 4 (của chương trình thứ I) trở lên có thể đăng ký
-        học thêm một bằng Đại học thứ 2 theo hình thức song ngành.
-      quick_replies:
-        - title: Học song ngành
-          payload: /hoc_song_nganh
+  - text: Sau khi hoàn tất học kì thứ I, nếu sinh viên đạt điểm trung bình học kì từ 2.0 theo thang điểm 4 (của chương trình thứ I) trở lên có thể đăng ký học thêm một bằng Đại học thứ 2 theo hình thức song ngành.
+    quick_replies:
+      - title: Học song ngành
+        payload: /hoc_song_nganh
   utter_danh_sach_nganh_hoc_song_nganh:
-    - text: Danh sách đào tạo song ngành của trường Đại học Đà Lạt
-        http://thuvien.dlu.edu.vn/vi/tin-tuc-c1d95/dao-tao-song-nganh-3030
-      quick_replies:
-        - title: Học song ngành
-          payload: /hoc_song_nganh
+  - text: Danh sách đào tạo song ngành của trường Đại học Đà Lạt http://thuvien.dlu.edu.vn/vi/tin-tuc-c1d95/dao-tao-song-nganh-3030
+    quick_replies:
+      - title: Học song ngành
+        payload: /hoc_song_nganh
   utter_danh_muc_nganh_thac_si:
-    - text: Danh mục ngành được đăng ký học trước các học phần trình độ thạc sĩ
-        https://dlu.edu.vn/cac-nganh-dao-tao-trinh-do-thac-si/
-      quick_replies:
-        - title: Học tích lũy thạc sĩ
-          payload: /hoc_tich_luy_hoc_phan_thac_si
+  - text: Danh mục ngành được đăng ký học trước các học phần trình độ thạc sĩ https://dlu.edu.vn/cac-nganh-dao-tao-trinh-do-thac-si/
+    quick_replies:
+      - title: Học tích lũy thạc sĩ
+        payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_gioi_thieu_nganh_thac_si:
-    - text: Giới thiệu tổng quan
-        https://dlu.edu.vn/wp-content/uploads/2022/08/Quy-che-dao-tao-thac-si-Truong-Dai-hoc-Da-Lat.pdf
-      quick_replies:
-        - title: Học tích lũy thạc sĩ
-          payload: /hoc_tich_luy_hoc_phan_thac_si
+  - text: Giới thiệu tổng quan https://dlu.edu.vn/wp-content/uploads/2022/08/Quy-che-dao-tao-thac-si-Truong-Dai-hoc-Da-Lat.pdf
+    quick_replies:
+      - title: Học tích lũy thạc sĩ
+        payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_uu_diem_nganh_thac_si:
-    - text:
-        Sinh viên đang theo học các chương trình đào tạo trình độ đại học ngành
-        phù hợp hết năm thứ 2, có điểm trung bình tích lũy xếp loại khá trở lên
-        được đăng ký học trước một số học phần của chương trình đào tạo trình độ
-        thạc sĩ của Trường, nhằm tiếp cận kiến thức chuyên sâu và có điều kiện
-        rút ngắn thời gian đào tạo trình độ thạc sĩ sau khi tốt nghiệp đại học.
-      quick_replies:
-        - title: Học tích lũy thạc sĩ
-          payload: /hoc_tich_luy_hoc_phan_thac_si
+  - text: Sinh viên đang theo học các chương trình đào tạo trình độ đại học ngành phù hợp hết năm thứ 2, có điểm trung bình tích lũy xếp loại khá trở lên được đăng ký học trước một số học phần của chương trình đào tạo trình độ thạc sĩ của Trường, nhằm tiếp cận kiến thức chuyên sâu và có điều kiện rút ngắn thời gian đào tạo trình độ thạc sĩ sau khi tốt nghiệp đại học.
+    quick_replies:
+      - title: Học tích lũy thạc sĩ
+        payload: /hoc_tich_luy_hoc_phan_thac_si
   utter_danh_sach_khoa:
-    - text: Danh sách các khoa
-      quick_replies:
-        - title: khoa toán tin
-          payload: /khoa_toan_tin
-        - title: khoa sư phạm
-          payload: /khoa_su_ham
-        - title: khoa vật lý kỹ thuật hạt nhân
-          payload: /khoa_VatLyKyThuatHatNhan
-        - title: khoa công ngệ thông tin
-          payload: /khoa_CNTT
-        - title: khoa hóa học và môi trường
-          payload: /khoa_HoahocVaMoitruong
-        - title: khoa sinh học
-          payload: /khoa_SinhHoc
-        - title: khoa kinh tế quản trị kinh doanh
-          payload: /khoa_KinhteQuantrikinhdoanh
-        - title: khoa nông lâm
-          payload: /khoa_NongLam
-        - title: khoa luật học
-          payload: /khoa_LuatHoc
-        - title: khoa du lịch
-          payload: /khoa_DuLich
-        - title: khoa quốc tế học
-          payload: /khoa_QuocTeHoc
-        - title: khoa ngữ văn và lịch sử
-          payload: /khoa_NguVanvaLichSu
-        - title: khoa xã hội học và công tac xã hội
-          payload: /khoa_XahoihocvaCongtacxahoi
-        - title: khoa ngoại ngữ
-          payload: /khoa_NgoaiNgu
+  - text: Danh sách các khoa
+    quick_replies:
+      - title: khoa toán tin
+        payload: /khoa_toan_tin
+      - title: khoa sư phạm
+        payload: /khoa_su_ham
+      - title: khoa vật lý kỹ thuật hạt nhân
+        payload: /khoa_VatLyKyThuatHatNhan
+      - title: khoa công ngệ thông tin
+        payload: /khoa_CNTT
+      - title: khoa hóa học và môi trường
+        payload: /khoa_HoahocVaMoitruong
+      - title: khoa sinh học
+        payload: /khoa_SinhHoc
+      - title: khoa kinh tế quản trị kinh doanh
+        payload: /khoa_KinhteQuantrikinhdoanh
+      - title: khoa nông lâm
+        payload: /khoa_NongLam
+      - title: khoa luật học
+        payload: /khoa_LuatHoc
+      - title: khoa du lịch
+        payload: /khoa_DuLich
+      - title: khoa quốc tế học
+        payload: /khoa_QuocTeHoc
+      - title: khoa ngữ văn và lịch sử
+        payload: /khoa_NguVanvaLichSu
+      - title: khoa xã hội học và công tac xã hội
+        payload: /khoa_XahoihocvaCongtacxahoi
+      - title: khoa ngoại ngữ
+        payload: /khoa_NgoaiNgu
   utter_khoa_toan_tin:
   - text: |-
       Đây là thông tin khoa Toán tin Email khoatoantin@dlu.edu.vn ;
       Website  http://ktt.dlu.edu.vn ; 
       Fanpage https://www.facebook.com/groups/mcs.dlu/
     quick_replies:
-       - title: Điểm chuẩn
-         payload: <POSTBACK_PAGELOAD>
-       - title: Hồ sơ xét tuyển
-         payload: <POSTBACK_PAGELOAD>
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Điểm chuẩn
+        payload: <POSTBACK_PAGELOAD>
+      - title: Hồ sơ xét tuyển
+        payload: <POSTBACK_PAGELOAD>
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_su_pham:
   - text: |-
       Đây là thông tin khoa sư phạm Email khoasupham@dlu.edu.vn ; 
@@ -518,18 +458,18 @@ responses:
       Fanpage https://www.facebook.com/KhoaSuphamDaihocDalat/ ; 
       sđt 0263 3826 911
     quick_replies:
-       - title: Điểm chuẩn
-         payload: <POSTBACK_PAGELOAD>
-       - title: Hồ sơ xét tuyển
-         payload: <POSTBACK_PAGELOAD>
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Điểm chuẩn
+        payload: <POSTBACK_PAGELOAD>
+      - title: Hồ sơ xét tuyển
+        payload: <POSTBACK_PAGELOAD>
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_VatLyKyThuatHatNhan:
   - text: |-
       Đây là thông tin khoa Vật Lý Kỹ Thuật Hạt Nhân Email khoavatly@dlu.edu.vn ;
@@ -537,18 +477,18 @@ responses:
       Fanpage https://www.facebook.com/khoavatlydalat/ ; 
       sđt 0263 3822 246
     quick_replies:
-       - title: Điểm chuẩn
-         payload: <POSTBACK_PAGELOAD>
-       - title: Hồ sơ xét tuyển
-         payload: <POSTBACK_PAGELOAD>
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Điểm chuẩn
+        payload: <POSTBACK_PAGELOAD>
+      - title: Hồ sơ xét tuyển
+        payload: <POSTBACK_PAGELOAD>
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_CNTT:
   - text: |-
       Đây là thông tin khoa Công Nghệ Thông Tin Email it@dlu.edu.vn ; 
@@ -556,18 +496,18 @@ responses:
       Fanpage https://www.facebook.com/InformationTechnologyDLU/ ; 
       sđt 0263 3552 540
     quick_replies:
-       - title: Điểm chuẩn
-         payload: <POSTBACK_PAGELOAD>
-       - title: Hồ sơ xét tuyển
-         payload: <POSTBACK_PAGELOAD>
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Điểm chuẩn
+        payload: <POSTBACK_PAGELOAD>
+      - title: Hồ sơ xét tuyển
+        payload: <POSTBACK_PAGELOAD>
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_HoahocVaMoitruong:
   - text: |-
       Đây là thông tin khoa Hóa Học và Môi Trường 
@@ -575,14 +515,14 @@ responses:
       Fanpage https://www.facebook.com/khoahoahocvamoitruongdlu/ ; 
       sđt 0263 3834 046
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_SinhHoc:
   - text: |-
       Đây là thông tin khoa Sinh Học 
@@ -591,14 +531,14 @@ responses:
       Fanpage https://www.facebook.com/khoasinhoc/?locale=vi_VN ; 
       sđt 0263 3834 050
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_KinhteQuantrikinhdoanh:
   - text: |-
       Đây là thông tin khoa Kinh Te Quan Tri Kinh Doanh 
@@ -607,14 +547,14 @@ responses:
       Fanpage https://www.facebook.com/ktqtkd.dlu/?locale=vi_VN ; 
       sđt 0263 3831 105
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_NongLam:
   - text: |-
       Đây là thông tin khoa Nông Lâm 
@@ -623,14 +563,14 @@ responses:
       Fanpage https://www.facebook.com/Nonglam.DLU/?locale=vi_VN ; 
       sđt 0263 3834 051
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_LuatHoc:
   - text: |-
       Đây là thông tin khoa Luât Học 
@@ -638,14 +578,14 @@ responses:
       Fanpage https://www.facebook.com/tuoitrekhoaluatdlu/; 
       sđt 0263 3554 457
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_DuLich:
   - text: |-
       Đây là thông tin khoa Du Lịch  
@@ -654,14 +594,14 @@ responses:
       Fanpage https://www.facebook.com/khoaqtdulichdalat/ ; 
       sđt 0263 3552 165
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_QuocTeHoc:
   - text: |-
       Đây là thông tin khoa Quốc Tế Học 
@@ -669,14 +609,14 @@ responses:
       Website http://kqth.dlu.edu.vn ; 
       Fanpage https://www.facebook.com/Qth.dlu/?locale=vi_VN
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_NguVanvaLichSu:
   - text: |-
       Đây là thông tin khoa Ngữ Văn và Lich Sử 
@@ -685,14 +625,14 @@ responses:
       Fanpage https://www.facebook.com/nvdhdl/?locale=vi_VN ; 
       sđt 0263 3826 913
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_XahoihocvaCongtacxahoi:
   - text: |-
       Đây là thông tin khoa Xã Hội và Công Tác Xã Hội
@@ -701,333 +641,313 @@ responses:
       Fanpage https://www.facebook.com/XHHCTXHDLU/ ; 
       sđt 0263 3834 469
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
   utter_khoa_NgoaiNgu:
   - text: |-
       Đây là thông tin khoa Ngoại Ngữ Email khoangoaingu@dlu.edu.vn ; 
       Website http://nn.dlu.edu.vn ; 
       Fanpage https://www.facebook.com/groups/231966513525512/
     quick_replies:
-       - title: Danh sách khoa
-         payload: /danh_sach_khoa
-       - title: Thuận lợi và hỗ trợ
-         payload: /thuan_loi_ho_tro
-       - title: Học phí và học bổng 
-         payload: /Hoc_phi_hoc_bong
-       - title: Thông tin ký túc xá
-         payload: /Thong_tin_ktx
-  utter_tuyen_sinh:
-    - text: Bạn muốn mình hỗ trợ điều gì về Tuyển sinh 2023?
-      quick_replies:
-        - title: Ngành tuyển sinh
-          payload: <POSTBACK_PAGELOAD>
-        - title: Mã trường
-          payload: /ma_truong
-        - title: Phương thức xét tuyển
-          payload: /phuong_thuc_xet_tuyen
+      - title: Danh sách khoa
+        payload: /danh_sach_khoa
+      - title: Thuận lợi và hỗ trợ
+        payload: /thuan_loi_ho_tro
+      - title: Học phí và học bổng 
+        payload: /Hoc_phi_hoc_bong
+      - title: Thông tin ký túc xá
+        payload: /Thong_tin_ktx
+  
+  utter_cac_nganh_dai_hoc:
+  - text: |-
+      Bạn đang quan tâm đến những lĩnh vực nào ạ?
+    quick_replies:
+      - title: Sư phạm
+        payload: "/nhom_su_pham"
+      - title: Toán và thống kê
+        payload: <POSTBACK_PAGELOAD>
+      - title: Khoa học tự nhiên
+        payload: <POSTBACK_PAGELOAD>
+
+  utter_nhom_su_pham:
+  - text: Nhóm ngành sư phạm là một trong những ngành có những ưu đãi riêng khi tham gia đào tạo tại trường Đại học Đà Lạt. Bạn muốn biết thông tin gì về nhóm ngành sư phạm?
+    buttons:
+      - title: Danh sách các ngành sư phạm
+        payload: "/ds_su_pham"
+      - title: Xét tuyển sư phạm
+        payload: '/xt_su_pham'
+      - title: Thông tin ngành
+        payload: /thong_tin_nganh_sp
+
+  utter_ds_su_pham:
+  - text: |-
+      Trường Đại học Đà Lạt hiện đang đào tạo các ngành sư phạm sau đây:
+      - Sư phạm toán học
+      - Sư phạm tin học
+      - Giáo dục tiểu học
+      - Sư phạm vật lý
+      - Sư phạm hóa học
+      - Sư phạm sinh học
+      - Sư phạm ngữ văn
+      - Sư phạm lịch sử
+      - Sư phạm tiếng Anh
+      Bạn đang muốn học ngành sư phạm nào ạ?
+    quick_replies: 
+      - title: Sư phạm toán học
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_toan"}}
+      - title: Sư phạm tin học
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_tin"}}
+      - title: Giáo dục tiểu học
+        payload: /chon_nganh_sp{{"nganh":"Giao_duc_tieu_hoc"}}
+      - title: Sư phạm vật lý
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_vat_ly"}}
+      - title: Sư phạm hóa học
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_hoa_hoc"}}
+      - title: Sư phạm sinh học
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_sinh_hoc"}}
+      - title: Sư phạm ngữ văn
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_ngu_van"}}
+      - title: Sư phạm lịch sử
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_lich_su"}}
+      - title: Sư phạm tiếng Anh
+        payload: /chon_nganh_sp{{"nganh":"Su_pham_tieng_anh}}
+
+
+  utter_xt_su_pham:
+  - text: Bạn gặp vấn đề gì về xét tuyển sư phạm ạ?
+    quick_replies:
+      - title: Điều kiện
+        payload: /dk_xt_sp
+      - title: Chỉ tiêu
+        payload: /chi_tieu_xt_sp
+      - title: Hỗ trợ
+        payload: /ho_tro_sp
+
+  utter_dk_xt_sp:
+  - text: Bạn phải có học lực loại giỏi năm lớp 12 hoặc có điểm xét tốt nghiệp THPT đạt từ 8.0 trở lên bạn nhé.
+
+  utter_chi_tieu_xt_sp:
+  - text: |-
+      Chỉ tiêu dự kiến của ngành sư phạm là 350 thí sinh bạn nhé. Cụ thể:
+      - Sư phạm toán học: 18 thí sinh
+      - Sư phạm vật lý: 24 thí sinh
+      - Sư phạm hóa học: 24 thí sinh
+      - Sư phạm sinh học: 24 thí sinh
+      - Sư phạm ngữ văn: 18 thí sinh
+      - Sư phạm lịch sử: 24 thí sinh
+      - Sư phạm tiếng Anh: 40 thí sinh
+      - Sư phạm tin học: 28 thí sinh
+      - Giáo dục tiểu học: 150 thí sinh
+  
+  utter_ho_tro_sp:
+  - text: Sinh viên học ngành sư phạm sẽ đcợc nhà nước hỗ trợ tiền đóng học phí bằng mức thu của cơ sở đào tạo và 3.63 triệu đồng một tháng chi phí sinh hoạt trong thời gian học bạn nhé.
+
+  utter_chon_nganh_sp:
+  - text: Bạn có thể tham khảo các thông tin sau
+    buttons:
+      - title: Điểm chuẩn
+        payload: /diem_chuan
+      - title: Mã ngành
+        payload: /ma_nganh
+      - title: Chỉ tiêu dự kiến
+        payload: /chi_tieu_du_kien
+      - title: Tổ hợp xét tuyển
+        payload: /to_hop_xet_tuyen
+
+  utter_thong_tin_sp:
+  - text: |-
+      Bạn có thể tham khảo các thông tin sau đây:
+    quick_replies:
+      - title: Chuẩn đầu ra
+        payload: /chuan_dau_ra_sp
+      - title: Cơ hội việc làm
+        payload: /co_hoi_viec_lam_sp
+
+  utter_chuan_dau_ra_sp:
+  - text: Sau khi tốt nghiệp , người học trở thành giáo viên có phấm chất chính trị, đạo đức, lối sống; có kiến thức cơ sở và chuyên môn vững vàng; có năng lực hoạt động nghề nghiệp; năng lực tìm hiểu người học và môi trường giáo dục; năng lực giáo dục; năng lực dạy học; năng lực giao tiếp sư phạm; năng lực hoạt động xã hội; có năng lực nghiên cứu và klhả năng sáng tạo để giải quyết những vấn đề trong phạm vi hoạt động nghề nghiệp, săn sàng thíc nghi với môi trường làm việc đa dạng; có ý thức và năng lực tự học để thích ứng với sự phát triển không ngừng của khoa học và nghề nghiệp. 
+
+  utter_co_hoi_viec_lam_sp:
+  - text: Sinh viên sau khi tốt nghiệp có thể giảng dạy tại các trường Đại học, Cao đẳng, các trường THPT, THCS, Tiểu học và các trung tâm giáo dục; có thể làm việc tại các viện nghiên cứu; tham gia công tác liên quan đến lĩnh vực giáo dục và đào tạo phù hợp với chuyên môn; có khả năng học tiếp ở bậc học cao hơn.
+
+
   utter_ma_truong:
-    - text: Mã của trường Đại học Đà Lạt là TDL bạn nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Mã của trường Đại học Đà Lạt là TDL bạn nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_phuong_thuc_xet_tuyen:
-    - text: |-
+  - text: |-
         Năm 2023, trường Đại học Đà Lạt sẽ xét tuyển bằng 4 hình thức
         bao gồm:
-
         - Xét tuyển bằng học bạ
-
         - Xét tuyển bằng điểm thi THPTQG
-
         - Xét tuyển bằng điểm thi đánh giá năng lực (ĐGNL)
-
         - Xét tuyển thẳng
-
         Bạn muốn tham gia xét tuyển bằng hình thức nào ạ?
-      quick_replies:
-        - title: Học bạ
-          payload: /hoc_ba
-        - title: Điểm thi THPTQG
-          payload: /thptqg
-        - title: Điểm thi ĐGNL
-          payload: /dgnl
-        - title: Xét tuyển thẳng
-          payload: /xet_thang
+    quick_replies:
+      - title: Học bạ
+        payload: /hoc_ba
+      - title: Điểm thi THPTQG
+        payload: /thptqg
+      - title: Điểm thi ĐGNL
+        payload: /dgnl
+      - title: Xét tuyển thẳng
+        payload: /xet_thang
   utter_xet_hocba:
-    - text: Bạn muốn biết thêm thông tin gì về xét học bạ ạ?
-      quick_replies:
-        - title: Hồ sơ
-          payload: /ho_so_hoc_ba
-        - title: Các tính điểm xét
-          payload: /tinh_diem_hoc_ba
-        - title: Cách nộp hồ sơ
-          payload: /cach_nop_hoc_ba
-        - title: Thời hạn nộp hồ sơ
-          payload: /thoi_han_hoc_ba
+  - text: Bạn muốn biết thêm thông tin gì về xét học bạ ạ?
+    quick_replies:
+      - title: Hồ sơ
+        payload: /ho_so_hoc_ba
+      - title: Các tính điểm xét
+        payload: /tinh_diem_hoc_ba
+      - title: Cách nộp hồ sơ
+        payload: /cach_nop_hoc_ba
+      - title: Thời hạn nộp hồ sơ
+        payload: /thoi_han_hoc_ba
   utter_xet_thpt:
-    - text: Bạn muốn biết thêm thông tin gì về xét điểm thi THPTQG ạ?
-      buttons:
-        - title: Hồ sơ
-          payload: /ho_so_thpt
-        - title: Cách thức
-          payload: /cach_thuc_thpt
-        - title: Thời hạn
-          payload: /thoi_han_thpt
+  - text: Bạn muốn biết thêm thông tin gì về xét điểm thi THPTQG ạ?
+    buttons:
+      - title: Hồ sơ
+        payload: /ho_so_thpt
+      - title: Cách thức
+        payload: /cach_thuc_thpt
+      - title: Thời hạn
+        payload: /thoi_han_thpt
   utter_xet_dgnl:
-    - text: Bạn muốn biết thêm thông tin gì về xét điểm thi đánh giá năng
-        lực ạ?
-      buttons:
-        - title: Hồ sơ
-          payload: /ho_so_dgnl
-        - title: Cách thức
-          payload: /cach_thuc_dgnl
-        - title: Thời hạn
-          payload: /thoi_han_dgnl
+  - text: Bạn muốn biết thêm thông tin gì về xét điểm thi đánh giá năng lực ạ?
+    buttons:
+      - title: Hồ sơ
+        payload: /ho_so_dgnl
+      - title: Cách thức
+        payload: /cach_thuc_dgnl
+      - title: Thời hạn
+        payload: /thoi_han_dgnl
   utter_xet_thang:
-    - text: Trường Đại học Đà Lạt sẽ xét tuyển thẳng nếu bạn đủ các tiêu
-        chí của trường hoặc của bộ theo quy định. Bạn muốn xét theo
-        tiêu chí nào ạ?
-      buttons:
-        - title: Quy định của trường
-          payload: /qd_truong
-        - title: Quy định của bộ
-          payload: /qd_bo
+  - text: Trường Đại học Đà Lạt sẽ xét tuyển thẳng nếu bạn đủ các tiêu chí của trường hoặc của bộ theo quy định. Bạn muốn xét theo tiêu chí nào ạ?
+    buttons:
+      - title: Quy định của trường
+        payload: /qd_truong
+      - title: Quy định của bộ
+        payload: /qd_bo
   utter_ho_so_hoc_ba:
-    - text: |-
-        Hồ sơ xét tuyển học bạ gồm:
-
-        - Phiếu đăng ký xét tuyển (theo mẫu của Trường Đại học Đà Lạt, thí sinh truy cập website: www.dlu.edu.vn; mục Tuyển sinh 2023); thí sinh lưu ý cần sử dụng đúng mẫu phiếu đăng ký xét tuyển của Trường Đại học Đà Lạt ứng với phương thức đăng ký; mỗi thí sinh đăng ký xét tuyển không quá 3 nguyện vọng
-
-        - Bản sao Học bạ THPT hoặc giấy chứng nhận kết quả kỳ thi đánh giá năng lực có công chứng; một phong bì ghi chính xác họ và tên, địa chỉ, số điện thoại liên lạc của thí sinh để Trường thông báo kết quả nếu thí sinh trúng tuyển.
-
-        - Lệ phí đăng ký xét tuyển: 25.000 đồng/1 nguyện vọng (nộp qua bưu điện hoặc trực tiếp tại Trường).
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: |-
+      Hồ sơ xét tuyển học bạ gồm:
+      - Phiếu đăng ký xét tuyển (theo mẫu của Trường Đại học Đà Lạt, thí sinh truy cập website: www.dlu.edu.vn; mục Tuyển sinh 2023); thí sinh lưu ý cần sử dụng đúng mẫu phiếu đăng ký xét tuyển của Trường Đại học Đà Lạt ứng với phương thức đăng ký; mỗi thí sinh đăng ký xét tuyển không quá 3 nguyện vọng
+      - Bản sao Học bạ THPT hoặc giấy chứng nhận kết quả kỳ thi đánh giá năng lực có công chứng; một phong bì ghi chính xác họ và tên, địa chỉ, số điện thoại liên lạc của thí sinh để Trường thông báo kết quả nếu thí sinh trúng tuyển.
+      - Lệ phí đăng ký xét tuyển: 25.000 đồng/1 nguyện vọng (nộp qua bưu điện hoặc trực tiếp tại Trường).
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_tinh_diem_hoc_ba:
-    - text: |-
-        Đối với phương thức sử dụng học bạ THPT, xét tuyển dựa vào kết quả học tập
-        lớp 12 hoặc kết quả lớp 11 cộng với học kỳ 1 lớp 12, lấy tổng điểm của 3
-        môn trong tổ hợp môn đăng ký xét tuyển.
+  - text: |-
+      Đối với phương thức sử dụng học bạ THPT, xét tuyển dựa vào kết quả học tập
+      lớp 12 hoặc kết quả lớp 11 cộng với học kỳ 1 lớp 12, lấy tổng điểm của 3
+      môn trong tổ hợp môn đăng ký xét tuyển.
 
-        Trong đó, các ngành đào tạo giáo viên, thí sinh có học lực lớp 12 đạt loại giỏi hoặc điểm xét tốt nghiệp THPT đạt từ 8.0 trở lên; các ngành khác, tổng điểm 3 môn trong tổ hợp môn đăng ký xét tuyển lớn hơn hoặc bằng 18 điểm và không có môn nào trong tổ hợp môn đăng ký xét tuyển có điểm trung bình dưới 5.0.
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+      Trong đó, các ngành đào tạo giáo viên, thí sinh có học lực lớp 12 đạt loại giỏi hoặc điểm xét tốt nghiệp THPT đạt từ 8.0 trở lên; các ngành khác, tổng điểm 3 môn trong tổ hợp môn đăng ký xét tuyển lớn hơn hoặc bằng 18 điểm và không có môn nào trong tổ hợp môn đăng ký xét tuyển có điểm trung bình dưới 5.0.
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_cach_nop_hoc_ba:
-    - text: Bạn có thể nộp trực tiếp hoặc nộp thông qua bưu điện nhé. Bạn
-        muốn nộp hồ sơ qua đâu? Mình có thể chỉ rõ cho bạn
-      buttons:
-        - title: Trực tiếp
-          payload: /truc_tiep
-        - title: Bưu điện
-          payload: /buu_dien
+  - text: Bạn có thể nộp trực tiếp hoặc nộp thông qua bưu điện nhé. Bạn muốn nộp hồ sơ qua đâu? Mình có thể chỉ rõ cho bạn
+    buttons:
+      - title: Trực tiếp
+        payload: /truc_tiep
+      - title: Bưu điện
+        payload: /buu_dien
   utter_truc_tiep:
-    - text: Bạn đến địa chỉ số 01 Phù Đổng Thiên Vương, TP Đà Lạt và nộp hồ sơ
-        tại tòa nhà A1 nhé.
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Bạn đến địa chỉ số 01 Phù Đổng Thiên Vương, TP Đà Lạt và nộp hồ sơ tại tòa nhà A1 nhé.
+    quick_replies:
+    - title: Tuyển sinh 2023
+      payload: /tuyen_sinh
   utter_buu_dien:
-    - text: Bạn gửi hồ sơ qua địa chỉ 1 Phù Đổng Thiên Vương, TP Đà Lạt với
-        người nhận là  Bộ phận tuyển sinh – Phòng Quản lý Đào tạo, Trường Đại
-        học Đà Lạt nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Bạn gửi hồ sơ qua địa chỉ 1 Phù Đổng Thiên Vương, TP Đà Lạt với người nhận là  Bộ phận tuyển sinh – Phòng Quản lý Đào tạo, Trường Đại học Đà Lạt nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
+        
   utter_thoi_han_hoc_ba:
-    - text: Trường Đại học Đà Lạt dự kiến sẽ nhận hồ sơ từ ngày 01/06/2023
-        bạn nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Trường Đại học Đà Lạt dự kiến sẽ nhận hồ sơ từ ngày 01/06/2023 bạn nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_ho_so_thpt:
-    - text: Bạn điền đầy đủ thông tin trên cổng thông tin tuyển sinh của Bộ
-        Giáo dục và Đào tạo nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Bạn điền đầy đủ thông tin trên cổng thông tin tuyển sinh của Bộ Giáo dục và Đào tạo nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_cach_thuc_thpt:
-    - text: Bạn đăng kí xét tuyển trực tuyến trên cổng thông tin tuyển sinh
-        của bộ Giáo dục nhe
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Bạn đăng kí xét tuyển trực tuyến trên cổng thông tin tuyển sinh của bộ Giáo dục nhe
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
+        
   utter_thoi_han_thpt:
-    - text: Hiện tại thì chưa có thời gian quy định đăng kí bạn nhé. Bộ
-        Giáo dục và Đào Tạo sẽ thông báo thời gian đăng kí sau. Bạn
-        nhớ đăng kí đúng thời hạn do Bộ quy định nhé.
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Hiện tại thì chưa có thời gian quy định đăng kí bạn nhé. Bộ Giáo dục và Đào Tạo sẽ thông báo thời gian đăng kí sau. Bạn nhớ đăng kí đúng thời hạn do Bộ quy định nhé.
+    quick_replies:
+    - title: Tuyển sinh 2023
+      payload: /tuyen_sinh
+        
   utter_ho_so_dgnl:
-    - text: Bạn điền đầy đủ thông tin trên hệ thống đăng kí dự kì thi đánh
-        giá năng lực nơi bạn bạn thi nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Bạn điền đầy đủ thông tin trên hệ thống đăng kí dự kì thi đánh giá năng lực nơi bạn bạn thi nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
+        
   utter_cach_thuc_dgnl:
-    - text: Bạn đăng kí xét tuyển trực tuyến trên cổng đăng kí dự kì thi
-        đánh giá năng lực nơi bạn bạn thi nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Bạn đăng kí xét tuyển trực tuyến trên cổng đăng kí dự kì thi đánh giá năng lực nơi bạn bạn thi nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_thoi_han_dgnl:
-    - text: Thời gian đăng kí xét tuyển sẽ do cơ sở tổ chức thi quy định. Do
-        đó bạn nhớ theo dõi nhé.
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Thời gian đăng kí xét tuyển sẽ do cơ sở tổ chức thi quy định. Do đó bạn nhớ theo dõi nhé.
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh 
   utter_qd_truong:
-    - text: Theo quy định, Đại học Đà Lạt sẽ xét tuyển thẳng nếu bạn tốt
-        nghiệp THPT 3 năm học sinh giỏi liên tiếp hoặc đạt giải nhất,
-        nhì, ba các kỳ thi học sinh giỏi cấp tỉnh trở lên vào các
-        ngành phù hợp với chuyên môn bạn đã đạt giải nhé
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+  - text: Theo quy định, Đại học Đà Lạt sẽ xét tuyển thẳng nếu bạn tốt nghiệp THPT 3 năm học sinh giỏi liên tiếp hoặc đạt giải nhất, nhì, ba các kỳ thi học sinh giỏi cấp tỉnh trở lên vào các ngành phù hợp với chuyên môn bạn đã đạt giải nhé
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
   utter_qd_bo:
-    - text: |-
-        Nếu bạn là một trong những đối tượng của điều 7 phần 2 của Quy chế tuyển sinh của Bộ, bạn sẽ được tuyển thẳng vào trường nhé. Chi tiết về quy chế bạn có thể tham khảo văn bản sau:
+  - text: |-
+      Nếu bạn là một trong những đối tượng của điều 7 phần 2 của Quy chế tuyển sinh của Bộ, bạn sẽ được tuyển thẳng vào trường nhé. Chi tiết về quy chế bạn có thể tham khảo văn bản sau:
         https://moet.gov.vn/content/vanban/Lists/VBPQ/Attachments/1239/Quy%20che%20tuyen%20sinh.pdf
-      quick_replies:
-        - title: Tuyển sinh 2023
-          payload: /tuyen_sinh
-        - title: Thuận lợi - hỗ trợ
-          payload: /thuan_loi_ho_tro
-        - title: Danh sách các khoa
-          payload: /danh_sach_khoa
-        - title: Học phí - học bổng
-          payload: /hoc_phi_va_hoc_bong
-        - title: Ký túc xá
-          payload: /Kytucxa
+    quick_replies:
+      - title: Tuyển sinh 2023
+        payload: /tuyen_sinh
+  utter_tuyen_sinh:
+  - text: Bạn muốn mình hỗ trợ điều gì về Tuyển sinh 2023?
+    quick_replies:
+      - title: Ngành tuyển sinh
+        payload: /nganh_tuyen_sinh
+      - title: Mã trường
+        payload: /ma_truong
+      - title: Phương thức xét tuyển
+        payload: /phuong_thuc_xet_tuyen
   utter_nganh_tuyen_sinh:
-    - text: Bạn muốn dự tuyển vào hệ đào tạo nào ạ?
-      buttons:
-        - title: Bậc đại học
-          payload: /nganh_dh
-        - title: Bậc thạc sĩ
-          payload: /nganh_ths
-        - title: Bậc tiến sĩ
-          payload: /nganh_ts
-  utter_nganh_dh:
-    - text: Bạn có ý định học các ngành sư phạm không?
-      buttons:
-        - title: Có
-          payload: /nganh_su_pham
-        - title: Không
-          payload: /nganh_tong_hop
+  - text: Bạn muốn tham gia tuyển sinh hệ nào ạ?
+    quick_replies:
+      - title: Đại học
+        payload: /dai_hoc
+      - title: Thạc sĩ
+        payload: <POSTBACK_PAGELOAD>
+      - title: Tiến sĩ
+        payload: <POSTBACK_PAGELOAD>
+  utter_dai_hoc:
+  - text: Trường Đại học Đà Lạt có hỗ trợ đào tạo song ngành, bạn có thể tham khảo.
+    quick_replies:
+      - title: Danh sách các ngành
+        payload: /cac_nganh_dai_hoc
+      - title: Đào tạo song ngành
+        payload: <POSTBACK_PAGELOAD>
+  
 actions:
   - utter_greet
   - utter_happy
@@ -1087,29 +1007,10 @@ actions:
   - utter_khoa_NguVanvaLichSu
   - utter_khoa_XahoihocvaCongtacxahoi
   - utter_khoa_NgoaiNgu
-  - utter_ma_truong
-  - utter_phuong_thuc_xet_tuyen
-  - utter_xet_hocba
-  - utter_xet_thpt
-  - utter_xet_dgnl
-  - utter_xet_thang
-  - utter_ho_so_hoc_ba
-  - utter_tinh_diem_hoc_ba
-  - utter_cach_nop_hoc_ba
-  - utter_buu_dien
-  - utter_truc_tiep
-  - utter_thoi_han_hoc_ba
-  - utter_ho_so_thpt
-  - utter_cach_thuc_thpt
-  - utter_thoi_han_thpt
-  - utter_ho_so_dgnl
-  - utter_cach_thuc_dgnl
-  - utter_thoi_han_dgnl
-  - utter_qd_truong
-  - utter_qd_bo
-  - utter_tuyen_sinh
-  - utter_nganh_tuyen_sinh
-  - action_nganh_su_pham
-  - action_nganh_tong_hop
+  # tuyển sinh 2023
+  - action_diem_chuan
+  - action_ma_nganh
+  - action_chi_tieu_du_kien
+  - action_to_hop_xet_tuyen
 forms: {}
 e2e_actions: []

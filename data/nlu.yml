@@ -1,5 +1,68 @@
 version: "2.0"
 nlu:
+
+- synonym: Su_pham_toan
+  examples: |
+    - sư phạm toán
+    - sp toán
+    - sp toán học
+    - sư phạm toán học
+
+- synonym: Su_pham_tin
+  examples: |
+    - sư phạm tin 
+    - sp tin
+    - sp tin học
+
+- synonym: Giao_duc_tieu_hoc
+  examples: |
+    - giáo dục tiểu học
+    - tiểu học
+    - gdth
+
+- synonym: Su_pham_vat_ly
+  examples: |
+    - sư phạm vật lý
+    - sp lý
+    - sư phạm lý
+
+- synonym: Su_pham_hoa_hoc
+  examples: |
+    - Sư phạm hóa học
+    - sp hóa
+    - sp hóa học
+
+- synonym: Su_pham_sinh_hoc
+  examples: |
+    - sư phạm sinh học
+    - sp sinh
+    - sp sinh vật
+
+- synonym: Su_pham_ngu_van
+  examples: |
+    - sư phạm ngữ văn
+    - sp văn
+    - sư phạm văn
+    - sp ngữ văn
+
+- synonym: Su_pham_lich_su
+  examples: |
+    - sư phạm lịch sử
+    - sp lịch sử
+    - sp sử
+    - sư phạm sử
+
+- synonym: Su_pham_tieng_anh
+  examples: |
+    - sư phạm tiếng Anh
+    - sp Anh
+    - sp Anh văn
+    - sư phạm Anh
+    - sư phạm Anh ngữ
+
+
+
+
 - intent: greet
   examples: |
     - chào trường
@@ -1395,13 +1458,12 @@ nlu:
     - ưu điểm
     - ưu diểm của ngành thạc sĩ
     - học thạc sĩ thì có lợi gì
-    - tại sao phải học thạc sĩ
+    - tại sao phải học thạc sĩ'
+
 - intent: danh_sach_khoa
   examples: |
       - danh sách các khoa
       - các khoa
-
-
 - intent: khoa_toan_tin
   examples: |
     - thông tin của khoa toán tin
@@ -1414,10 +1476,10 @@ nlu:
   examples: |
     - thông tin khoa vật lý ky thuật hat nhân
     - khoa vật lý kỹ thuật hạt nhân
-- intent: khoa_ToanHoc
-  examples: |
-    - thông tin khoa toan hoc
-    - khoa toán tin
+# - intent: khoa_ToanHoc
+#   examples: |
+#     - thông tin khoa toan hoc
+#     - khoa toán tin
 - intent: khoa_CNTT
   examples: |
     - thông tin khoa công nghệ thông tin
@@ -1458,6 +1520,102 @@ nlu:
   examples: |
     - thông tin khoa ngoai ngữ
     - khoa ngoại ngữ
+
+
+# Tuyen Sinh 2023
+- intent: cac_nganh_dai_hoc
+  examples: |
+    - Cho mình hỏi về các ngành đào tạo ở trường mình với
+    - Các ngành của trường Đại học Đà Lạt
+    - Các ngành tuyển sinh
+
+- intent: nhom_su_pham
+  examples: |
+    - Mình muốn học các ngành sư phạm
+    - Nhóm ngành sư phạm là gì vậy ạ?
+    
+- intent: ds_su_pham
+  examples: |
+    - Danh sách các ngành sư phạm
+    - Có bao nhiêu ngành sư phạm?
+
+- intent: xt_su_pham
+  examples: |
+    - Thông tin về xét tuyển sư phạm
+    - Cho em hỏi các thông tin về xét tuyển sư phạm.
+
+- intent: chon_nganh_sp
+  examples: |
+    - trường cho em hỏi ngành [Sư phạm Toán học](nganh)
+    - ngành [sư phạm Toán học](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Tin học](nganh)
+    - ngành [sư phạm Tin học](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Giáo dục tiểu học](nganh)
+    - ngành [Tiểu học](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Vật lý](nganh)
+    - ngành [sư phạm Vật lý](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Hóa học](nganh)
+    - ngành [sư phạm Hóa học](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Sinh học](nganh)
+    - ngành [sư phạm Sinh học](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Ngữ văn](nganh)
+    - ngành [sư phạm Ngữ văn](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Lịch sử](nganh)
+    - ngành [sư phạm Lịch sử](nganh) tuyển sinh ra sao?
+    - trường cho em hỏi ngành [Sư phạm Tiếng Anh](nganh)
+    - ngành [sư phạm tiếng Anh](nganh) tuyển sinh ra sao?
+  
+- intent: dk_xt_sp
+  examples: |
+    - Cho em hỏi điều kiện để được xét tuyển vào ngành sư phạm a?
+    - Điều kiện xét tuyển vào các ngành sư phạm của trường mình là gì vậy ạ?
+    - Đièu kiện xét tuyển sư phạm
+  
+- intent: chi_tieu_xt_sp
+  examples: |
+    - Cho em hỏi chỉ tiêu xét tuyển ngành sư phạm của trường mình năm nay là bao nhiêu ạ?
+    - Chỉ tiêu ngành sư phạm
+
+- intent: ho_tro_sp
+  examples: |
+    - Cho em hỏi em có được ưu đãi gì khi học ngành sư phạm ko ạ?
+    - Học ngành sư phạm được hỗ trợ gì ạ?
+
+- intent: thong_tin_nganh_sp
+  examples: |
+    - Thông tin về ngành sư phạm
+    - Cho em hỏi một số thông tin về ngành sư phạm ạ
+
+- intent: chuan_dau_ra_sp
+  examples: |-
+    - chuẩn đầu ra của ngành sư phạm.
+    - em phải đạt được những tiêu chí nào để được tốt nghiệp ngành sư phạm ạ?
+    - cho mình hỏi chuẩn đầu ra của ngành sư phạm
+
+- intent: co_hoi_viec_lam_sp
+  examples: |-
+    - Cơ hội việc làm của ngành sư phạm
+    - Em sẽ được những cơ hội gì sau khi tốt nghiệp ngành sư phạm ạ?
+    - Cho mình hỏi nếu mình học ngành sư phạm thì ra trường mình sẽ làm gì ạ?
+
+- intent: diem_chuan
+  examples: |-
+    - em muốn xem điểm chuẩn của ngành này ạ
+    - Điểm chuẩn của ngành đó là bao nhiêu ạ?
+- intent: ma_nganh
+  examples: |-
+    - Cho em hỏi mã ngành của ngành này được không ạ?
+    - Mã ngành của ngành này là gì vậy ạ?
+- intent: chi_tieu_du_kien
+  examples: |-
+    - Chỉ tiêu dự kiến của ngành này là bao nhiêu ạ?
+    - Ngành này dự kiến sẽ tuyển bao nhiêu sinh viên ạ? 
+
+- intent: to_hop_xet_tuyen
+  examples: |-
+    - Tổ hợp môn để xét tuyển ngành này gồm khối nào ạ
+    - Các khối xét tuyển của ngành này
+
 - intent: ma_truong
   examples: |
     - Cho minh hỏi mã trường của trường mình là gì vậy ạ?
@@ -1556,41 +1714,19 @@ nlu:
 - intent: buu_dien
   examples: |
     - Em đang ở xa, không thể lên trường trực tiếp được, vậy Em có thể gửi hồ sơ thông qua bưu điện được không ạ?
-    - Có thể gửi hồ sơ qua bưu điện k?'
+    - Có thể gửi hồ sơ qua bưu điện k?
 
 - intent: tuyen_sinh
   examples: |
-    - Cho mình hỏi vấn đề tuyển sinh của trường với ạ
-    - bạn cho mình hỏi trường có xét tuyển học bạ online không ạ
-    - trường có các phương thức tuyển sinh nào ạ
-    - trường có xét tuyển onl không ạ
-    - bot chi mình hỏi về việc tuyển sinh của trường
-    - ad cho hỏi về tuyển sinh với
+    - Thông tin tuyển sinh 2023
+    - Cho em hỏi về tuyển sinh năm nay
 
 - intent: nganh_tuyen_sinh
   examples: |
-    - Các ngành tuyển sinh của trường gồm những ngành nào ạ?
-    - Trường tuyển sinh những ngành nào ạ?
+    - Cho em xin thông tin các ngành tuyển sinh của trường Đại học Đà Lạt.
+    - Trường đại học Đà Lạt tuyển sinh những ngành nào?
 
-- intent: nganh_ths
+- intent: dai_hoc
   examples: |
-    - Các ngành tuyển sinh thạc sĩ của trường mình gồm những ngành nào ạ?
-    - Trường tuyển sinh thạc sĩ với những ngành nào ạ?  
-
-- intent: nganh_ts
-  examples: |
-    - Các ngành tuyển sinh tiến sĩ của trường mình gồm những ngành nào ạ?
-    - Trường tuyển sinh hệ tiến sĩ với những ngành nào ạ?  
-
-- intent: nganh_dh
-  examples: |
-    - Các ngành tuyển sinh trình độ đại học của trường mình gồm những ngành nào ạ?
-    - Trường tuyển sinh hệ đại học với những ngành nào ạ?
-
-- intent: nganh_su_pham
-  examples: |
-    - Các ngành sư phạm của trường mình gồm những ngành nào?
-    
-- intent: nganh_tong_hop
-  examples: | 
-    - Các ngành tổng hợp của trường mình gồm những ngành nào?
+    - em muốn tham gia học đại học tại trường đại học Đà lạt ạ
+    - các ngành đào tạo hệ đại học ở trường Đại học Đà Lạt
